@@ -1,0 +1,9 @@
+# NPM dependency directory
+node_modules
+
+# Environment variables
+.env
+
+# OS folder config files
+Desktop.ini
+.DS_Store
