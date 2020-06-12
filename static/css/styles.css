@@ -35,7 +35,8 @@ header {
 
 header,
 main,
-footer {
+footer,
+footer .contact-modal {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -47,9 +48,18 @@ footer {
   height: 100%;
 }
 
+footer {
+  overflow: visible;
+}
+
+footer .contact-modal {
+  align-items: flex-start;
+}
+
 header > div,
 main > div,
-footer > div {
+footer > div,
+footer .contact-modal > div {
   width: 800px;
   position: relative;
 }
@@ -429,6 +439,31 @@ footer .get-in-touch:before {
   top: 16px;
   left: -34px;
   color: #8a8a8a;
+}
+
+footer .contact-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  z-index: 10;
+  background: #e6e6e6;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: opacity .15s linear, transform .3s ease-out, visibility .3s;
+}
+
+footer .contact-modal.open {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+footer .contact-modal h1 {
+  font-size: 45px;
+  text-align: center;
 }
 
 footer .made-by {
