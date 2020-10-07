@@ -25,6 +25,10 @@ body {
   overscroll-behavior: none;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 header {
   height: 100vh;
   background-image: url(images/bg.jpg);
@@ -321,6 +325,52 @@ main .code .code-line .caret {
   50% { opacity: 1 }
 }
 
+button {
+  color: #377e88;
+  cursor: pointer;
+  border: 2px solid #377e88;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgba(55, 126, 136, 0.2);
+  background: transparent;
+  padding: 18px 32px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  overflow: hidden;
+  transition: color 300ms;
+}
+
+button:hover {
+  color: #e6e6e6;
+}
+
+button:after {
+  content: '';
+  background: #377e88;
+  position: absolute;
+  z-index: -1;
+  transition: width 300ms;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: -5px;
+  transform: skewX(-10deg);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(55, 126, 136, 0.3)
+}
+
+button:hover:after {
+  width: 110%;
+}
+
 footer h1 {
   margin-top: 80px;
   color: #377e88;
@@ -384,52 +434,9 @@ footer .get-in-touch {
 }
 
 footer .get-in-touch button {
-  color: #377e88;
-  cursor: pointer;
-  border: 2px solid #377e88;
-  border-radius: 4px;
-  box-shadow: 0px 2px 2px rgba(55, 126, 136, 0.2);
-  background: transparent;
-  padding: 18px 32px;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
   width: 85%;
-  position: relative;
   top: 15px;
-  overflow: hidden;
-  transition: color 300ms;
 }
-
-footer .get-in-touch button:hover {
-  color: #e6e6e6;
-}
-
-footer .get-in-touch button:after {
-  content: '';
-  background: #377e88;
-  position: absolute;
-  z-index: -1;
-  transition: width 300ms;
-  width: 0%;
-  height: 100%;
-  top: 0;
-  left: -10px;
-  transform: skewX(-10deg);
-}
-
-footer .get-in-touch button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(55, 126, 136, 0.3)
-}
-
-footer .get-in-touch button:hover:after {
-  width: 110%;
-}
-
 
 footer .get-in-touch:before {
   content: "OR";
@@ -442,6 +449,9 @@ footer .get-in-touch:before {
 }
 
 footer .contact-modal {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  color: #3c3c3c;
   position: fixed;
   top: 0;
   left: 0;
@@ -455,6 +465,28 @@ footer .contact-modal {
   transition: opacity .15s linear, transform .3s ease-out, visibility .3s;
 }
 
+footer .contact-modal > svg.close-modal {
+  position: absolute;
+  width: 28px;
+  right: 80px;
+  top: 80px;
+  fill: #3c3c3c;
+  cursor: pointer;
+}
+
+footer .contact-modal > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+footer .contact-modal form {
+  padding: 0 65px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 footer .contact-modal.open {
   visibility: visible;
   opacity: 1;
@@ -464,6 +496,134 @@ footer .contact-modal.open {
 footer .contact-modal h1 {
   font-size: 45px;
   text-align: center;
+  height: 80px;
+  margin-top: 70px;
+}
+
+footer .contact-modal input {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  width: 110px;
+  color: #3c3c3c;
+  border-bottom: 2px solid #3c3c3c;
+}
+
+footer .contact-modal input:-webkit-autofill,
+footer .contact-modal input:-webkit-autofill:hover,
+footer .contact-modal input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #3c3c3c;
+  -webkit-box-shadow: 0 0 0px 1000px #e6e6e6 inset;
+}
+
+footer .contact-modal input.email-input {
+  width: 210px;
+}
+
+footer .contact-modal input:focus,
+footer .contact-modal textarea:focus {
+  outline: none;
+}
+
+footer .contact-modal input,
+footer .contact-modal textarea {
+  transition: border-color 200ms;
+}
+
+footer .contact-modal input.invalid,
+footer .contact-modal textarea.invalid {
+  border-color: #b55252;
+}
+
+footer .contact-modal textarea {
+  font-family: 'Roboto', sans-serif;
+  margin: 20px 0px 20px;
+  background: transparent;
+  border: 2px solid #3c3c3c;
+  border-radius: 4px;
+  padding: 6px;
+  width: 100%;
+  color: #3c3c3c;
+  font-size: 22px;
+  flex: 1;
+}
+
+footer .contact-modal .submission {
+  margin-bottom: 85px;
+  display: flex;
+}
+
+footer .contact-modal .submission button {
+  width: 200px;
+}
+
+footer .contact-modal .submission button.submitting:after {
+  width: 110%;
+}
+
+footer .contact-modal .submission button svg {
+  vertical-align: middle;
+  width: 45px;
+  fill: #fff;
+  display: none;
+}
+
+footer .contact-modal .submission button svg.show {
+  display: inline;
+}
+
+footer .contact-modal .submission button span {
+  display: none;
+}
+
+footer .contact-modal .submission button span.show {
+  display: inline;
+}
+
+footer .contact-modal .submission .notifications {
+  flex: 1;
+  margin-left: 20px;
+  padding: 20px 60px 20px 25px;
+  text-align: center;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  background-color: #377e88;
+  border-radius: 4px;
+  color: #fff;
+  transition: opacity 200ms, transform 200ms;
+  transform: translateY(15px);
+  opacity: 0;
+  height: 59px;
+}
+
+footer .contact-modal .submission .notifications.show {
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+footer .contact-modal .submission .notifications.error {
+  background-color: #bb6464;
+}
+
+footer .contact-modal .submission .notifications.warning {
+  background-color: #c0924b;
+}
+
+footer .contact-modal .submission .notifications > div {
+  display: none;
+}
+
+footer .contact-modal .submission .notifications > div.show {
+  display: block;
+}
+
+footer .contact-modal .submission .notifications svg.dismiss {
+  width: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  fill: #fff;
+  cursor: pointer;
 }
 
 footer .made-by {

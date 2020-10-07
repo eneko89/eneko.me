@@ -214,8 +214,32 @@
           Made with <span class="heart">♥</span> by Eneko <span class="copy">©</span> 2020. <a href="#">Code here</a>, use & remix!
         </div>
         <aside class="contact-modal">
+          <svg class="close-modal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M284.3 256L506.1 34.1c7.8-7.8 7.8-20.5 0-28.3 -7.8-7.8-20.5-7.8-28.3 0L256 227.7 34.1 5.9c-7.8-7.8-20.5-7.8-28.3 0 -7.8 7.8-7.8 20.5 0 28.3l221.9 221.9L5.9 477.9c-7.8 7.8-7.8 20.5 0 28.3 3.9 3.9 9 5.9 14.1 5.9 5.1 0 10.2-2 14.1-5.9L256 284.3l221.9 221.9c3.9 3.9 9 5.9 14.1 5.9s10.2-2 14.1-5.9c7.8-7.8 7.8-20.5 0-28.3L284.3 256z"/></svg>
           <div>
             <h1>Get in touch</h1>
+            <form>
+              <div class="contact-info">
+                <span>Hello, my name is</span>
+                <input name="name" type="text" placeholder="your name" class="name-input">
+                <span>and my e-mail is</span>
+                <input name="email" type="text" placeholder="your e-mail" class="email-input">
+              </div>
+              <textarea class="message" placeholder="I wanted to write to you about..."></textarea>
+              <div class="submission">
+                <button>
+                  <span class="show">Submit</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 20"><circle cx="6" cy="10" r="6" class="a"><animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1"/></circle><circle cx="26" cy="10" r="6" class="a"><animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.2"/></circle><circle cx="46" cy="10" r="6" class="a"><animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.3"/></circle></svg>
+                </button>
+                <div class="notifications">
+                  <div class="empty-error">You must fill all the fields before submittig</div>
+                  <div class="email-error">You must provide a valid e-mail address</div>
+                  <div class="unknown-error">Unknown error, send me an e-mail instead</div>
+                  <div class="already-sent-warning">You already sent that, click to start over</div>
+                  <div class="success-notification">Message received, I'll get back to you soon!</div>
+                  <svg class="dismiss" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 341.8 341.8"><rect x="-49.4" y="149.5" transform="matrix(0.7072 -0.707 0.707 0.7072 -70.7868 170.8326)" width="440.5" height="42.7"/><rect x="149.6" y="-49.4" transform="matrix(0.707 -0.7072 0.7072 0.707 -70.7712 170.919)" width="42.7" height="440.5"/></svg>
+                </div>
+              </div>
+            </form>
           </div>
         </aside>
       </div>
