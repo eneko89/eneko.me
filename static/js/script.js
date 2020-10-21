@@ -42,8 +42,10 @@ class ContactModal {
     this.unknownError = document.querySelectorAll('.contact-modal .notifications .unknown-error')[0];
     this.alreadySentWarning = document.querySelectorAll('.contact-modal .notifications .already-sent-warning')[0];
     this.successNotification = document.querySelectorAll('.contact-modal .notifications .success-notification')[0];
-    this.inputs = Array.from(document.querySelectorAll('.contact-modal input, .contact-modal textarea'));
+    this.nameInput = document.querySelectorAll('.contact-modal input.name-input')[0];
     this.emailInput = document.querySelectorAll('.contact-modal input.email-input')[0];
+    this.textInput = document.querySelectorAll('.contact-modal textarea')[0];
+    this.inputs = [this.nameInput, this.emailInput, this.textInput];
     this.submitButton = document.querySelectorAll('.contact-modal .submission button')[0];
     this.submitButtonSpinner = document.querySelectorAll('.contact-modal .submission button svg')[0];
     this.submitButtonText = document.querySelectorAll('.contact-modal .submission button span')[0];
@@ -53,7 +55,7 @@ class ContactModal {
   setListeners() {
     this.dismissIcon.addEventListener("click", () => this.dismissNotifications());
     this.closeIcon.addEventListener("click", event => this.close(event));
-    this.submitButton.addEventListener("click", event => this.validate(event));
+    this.submitButton.addEventListener("click", event => this.submit(event));
     window.addEventListener('keydown', event => this.close(event));
   }
 
@@ -63,7 +65,7 @@ class ContactModal {
   }
 
   close(event) {
-    if (!event.key || (event.key === 'Escape' || event.key === 'Esc')) {
+    if (event.type === 'click' || (event.key === 'Escape' || event.key === 'Esc')) {
       this.container.classList.remove('open');
       bodyElement.classList.remove('modal-open');
       event.preventDefault();
@@ -120,10 +122,9 @@ class ContactModal {
     this.submitButtonText.classList.add('show');
   }
 
-  validate(event) {
-    this.dismissNotifications();
+  isDataValid() {
     const emptyInputs = this.inputs.filter(input => this.isInputEmpty(input));
-    event.preventDefault();
+
     if (emptyInputs.length) {
       this.showNotification('emptyError', emptyInputs);
       return false;
@@ -133,6 +134,40 @@ class ContactModal {
       return false;
     }
     return true;
+  }
+
+  submit(event) {
+    event.preventDefault();
+    this.dismissNotifications();
+
+    if (this.isDataValid()) {
+      const request = new XMLHttpRequest();
+      this.showButtonSpinner();
+      request.open('POST', '/contact', true);
+
+      request.onload = () => {
+        this.hideButtonSpinner();
+        this.dismissNotifications();
+        if (request.status === 200) {
+          this.showNotification('successNotification');
+        } else {
+          this.showNotification('unknownError');
+        }
+      };
+
+      request.onerror = () => {
+        this.hideButtonSpinner();
+        this.dismissNotifications();
+        this.showNotification('unknownError');
+      }
+
+      request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+      request.send(JSON.stringify({
+        name: this.nameInput.value,
+        email: this.emailInput.value,
+        text: this.textInput.value
+      }));
+    }
   }
 
 }

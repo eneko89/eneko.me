@@ -557,6 +557,10 @@ footer .contact-modal .submission button {
   width: 200px;
 }
 
+footer .contact-modal .submission button.submitting {
+  box-shadow: 0 0 0 3px rgba(55, 126, 136, 0.3);
+}
+
 footer .contact-modal .submission button.submitting:after {
   width: 110%;
 }
