@@ -16,12 +16,12 @@ a:focus {
 }
 
 ::selection {
-  background-color: #d9d9d9;
+  background-color: #e3e3e3;
 }
 
 body {
   margin: 0;
-  background-color: #e6e6e6;
+  background-color: #eaeaea;
   overscroll-behavior: none;
 }
 
@@ -161,24 +161,24 @@ header h2 > span.reveal-block {
   left: 40px;
   top: 0;
   position: absolute;
-  background: #ababab;
+  background: #b3b3b3;
   background: linear-gradient(
     0deg,
-    #ababab 35%,
+    #b3b3b3 35%,
     rgba(0,0,0,0) 98%
   );
 }
 
 main .line,
 footer .line {
-  background: #ababab;
+  background: #b3b3b3;
 }
 
 header a.scroll {
   position: absolute;
   display: inline-block;
   font-size: 16px;
-  color: #a2a2a2;
+  color: #a4a4a4;
   text-decoration: none;
   padding-left: 33px;
   left: 29px;
@@ -210,10 +210,10 @@ header a.scroll:before {
   left: 0;
   width: 24px;
   height: 40px;
-  border: 2px solid #ababab;
+  border: 2px solid #b3b3b3;
   border-radius: 12px;
   content: "";
-  background-color: #e5e5e5;
+  background-color: #eaeaea;
   transition: border-color 300ms;
 }
 
@@ -229,7 +229,7 @@ header a.scroll:after {
   left: 11px;
   width: 2px;
   height: 8px;
-  background: #ababab;
+  background: #b3b3b3;
   border-radius: 1px;
   content: "";
   animation-name: scroll;
@@ -270,12 +270,12 @@ main .code .code-line:before {
   content: attr(data-line-num);
   position: absolute;
   left: -55px;
-  color: #bbb;
+  color: #bdbdbd;
   top: 0;
 }
 
 main .code .code-line:hover:after {
-  background-color: #dedede;
+  background-color: #e3e3e3;
   top: 0;
   width: 300%;
   left: -100%;
@@ -346,7 +346,7 @@ button {
 }
 
 button:hover {
-  color: #e6e6e6;
+  color: #eaeaea;
 }
 
 button:after {
@@ -459,7 +459,7 @@ footer .contact-modal {
   width: 100%;
   visibility: hidden;
   z-index: 10;
-  background: #e6e6e6;
+  background: #eaeaea;
   transform: translateY(-50px);
   opacity: 0;
   transition: opacity .15s linear, transform .3s ease-out, visibility .3s;
@@ -513,7 +513,7 @@ footer .contact-modal input:-webkit-autofill,
 footer .contact-modal input:-webkit-autofill:hover,
 footer .contact-modal input:-webkit-autofill:focus {
   -webkit-text-fill-color: #3c3c3c;
-  -webkit-box-shadow: 0 0 0px 1000px #e6e6e6 inset;
+  -webkit-box-shadow: 0 0 0px 1000px #eaeaea inset;
 }
 
 footer .contact-modal input.email-input {
