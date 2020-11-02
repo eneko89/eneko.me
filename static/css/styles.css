@@ -16,7 +16,7 @@ a:focus {
 }
 
 ::selection {
-  background-color: #e3e3e3;
+  background-color: #e4e4e4;
 }
 
 body {
@@ -275,7 +275,7 @@ main .code .code-line:before {
 }
 
 main .code .code-line:hover:after {
-  background-color: #e3e3e3;
+  background-color: #e4e4e4;
   top: 0;
   width: 300%;
   left: -100%;
