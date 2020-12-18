@@ -19,6 +19,10 @@ a:focus {
   background-color: #e4e4e4;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 body {
   margin: 0;
   background-color: #eaeaea;
@@ -66,6 +70,10 @@ footer > div,
 footer .contact-modal > div {
   width: 800px;
   position: relative;
+}
+
+main .code.narrow-format {
+  display: none;
 }
 
 header > div {
@@ -255,7 +263,7 @@ header a.scroll:focus-within:after  {
 }
 
 main .code {
-  margin-left: 60px;
+  margin-left: 55px;
   font-family: 'Roboto Mono';
   font-size: 16px;
   line-height: 1.7;
@@ -269,7 +277,7 @@ main .code .code-line {
 main .code .code-line:before {
   content: attr(data-line-num);
   position: absolute;
-  left: -55px;
+  left: -47px;
   color: #bdbdbd;
   top: 0;
 }
@@ -373,6 +381,7 @@ button:hover:after {
 
 footer h1 {
   margin-top: 80px;
+  margin-bottom: 25px;
   color: #377e88;
   font-family: 'Roboto Condensed', sans-serif;
   font-size: 30px;
@@ -380,15 +389,14 @@ footer h1 {
 }
 
 footer .social-links {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-bottom: 90px;
-  width: 475px;
+  margin-bottom: 75px;
 }
 
 footer .social-links a {
-  width: 50%;
+  width: 33.5%;
   height: 20px;
   margin: 8px 0;
   font-family: 'Roboto', sans-serif;
@@ -427,23 +435,23 @@ footer .social-links svg {
   fill: #3c3c3c;
 }
 
-footer .get-in-touch {
-  width: 260px;
-  display: inline-block;
+footer .social-links .get-in-touch {
+  width: 243px;
   text-align: right;
+  position: relative;
+  top: -28px;
 }
 
-footer .get-in-touch button {
-  width: 85%;
-  top: 15px;
+footer .social-links .get-in-touch button {
+  width: 88%;
 }
 
-footer .get-in-touch:before {
+footer .social-links .get-in-touch:before {
   content: "OR";
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   position: relative;
-  top: 16px;
+  top: 1px;
   left: -34px;
   color: #8a8a8a;
 }
@@ -472,6 +480,7 @@ footer .contact-modal > svg.close-modal {
   top: 80px;
   fill: #3c3c3c;
   cursor: pointer;
+  z-index: 11;
 }
 
 footer .contact-modal > div {
@@ -661,4 +670,479 @@ footer .made-by a:hover {
 
 footer .made-by a:focus {
   color: #377e88;
+}
+
+footer .made-by br {
+  display: none;
+}
+
+@media (max-width: 800px) {
+
+  header > div,
+  footer > div,
+  footer .contact-modal > div {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 800px), (max-height: 500px) {
+
+  header h1 {
+    font-size: 50px;
+  }
+
+  header h2 {
+    font-size: 22px;
+  }
+
+  footer > div {
+    padding-left: 55px;
+  }
+
+  main .code {
+    font-size: 15px;
+    margin-left: 54px;
+  }
+
+  main .code .code-line:before {
+    left: -44px;
+  }
+
+  footer .social-links .get-in-touch button {
+    width: 100%;
+  }
+
+  footer .social-links .get-in-touch {
+    width: 205px;
+  }
+
+  footer .social-links .get-in-touch:before {
+    content: "";
+  }
+
+  footer .contact-modal form {
+    padding: 0px 40px;
+  }
+
+  footer .contact-modal > svg.close-modal {
+    right: 40px;
+  }
+
+}
+
+@media (max-width: 750px), (max-height: 500px) {
+
+  header h1 {
+    font-size: 46px;
+    margin-right: 160px;
+  }
+
+  header h2 {
+    font-size: 20px;
+  }
+
+  header a.scroll {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  main .code {
+    font-size: 14px;
+  }
+
+  footer .contact-modal form {
+    padding: 0px 30px;
+  }
+
+  footer .contact-modal > svg.close-modal {
+    right: 30px;
+  }
+
+}
+
+@media (max-width: 700px), (max-height: 500px) {
+
+  header h1 {
+    font-size: 40px;
+    margin-right: 125px;
+  }
+
+  header h2 {
+    font-size: 18px;
+  }
+
+  footer .social-links a {
+    width: 45%;
+  }
+
+  footer .social-links .get-in-touch {
+    top: 0;
+    margin-top: 30px;
+  }
+
+  footer h1 {
+    font-size: 28px;
+  }
+
+  footer .contact-modal,
+  footer .contact-modal input,
+  footer .contact-modal textarea {
+    font-size: 20px;
+  }
+
+  footer .contact-modal form {
+    padding: 0px 15px;
+  }
+
+  footer .contact-modal > svg.close-modal {
+    right: 25px;
+    top: 35px;
+  }
+
+  footer .contact-modal h1 {
+    font-size: 35px;
+    height: 65px;
+    margin: 32px 70px 0 15px;
+  }
+
+  footer .contact-modal form {
+    padding: 0 15px;
+  }
+
+  footer .contact-modal form .contact-info {
+    line-height: 1.6;
+  }
+
+  footer .contact-modal textarea {
+    line-height: 1.6;
+  }
+
+  footer .contact-modal .submission {
+    margin-bottom: 15px;
+    flex-direction: column-reverse;
+  }
+
+  footer .contact-modal .submission button {
+    width: 100%;
+    z-index: 10;
+  }
+
+  footer .contact-modal .submission .notifications {
+    flex: 1;
+    position: absolute;
+    padding-left: 27px;
+    padding-right: 125px;
+    margin-bottom: 20px;
+    margin-left: 0;
+    text-align: left;
+    line-height: 1.3;
+  }
+
+  footer .contact-modal .submission .notifications.show {
+    position: static;
+  }
+
+  footer .contact-modal .submission .notifications svg.dismiss {
+    width: 22px;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  main .code.wide-format {
+    display: none;
+  }
+
+  main .code.narrow-format {
+    display: block;
+  }
+
+}
+
+@media (min-width: 700px) and (max-height: 500px) {
+
+  footer .social-links a {
+    width: 33.5%;
+  }
+
+  footer .social-links .get-in-touch {
+    width: 205px;
+    top: -28px;
+    margin-top: 0;
+  }
+
+}
+
+@media (max-width: 560px) {
+
+  header h1 {
+    margin: 0 30px 30px 30px;
+    font-size: 8.6vw;
+    line-height: 1.4;
+  }
+
+  header h2 {
+    font-size: 18px;
+    margin-bottom: 42vh;
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  footer > div {
+    width: 800px;
+    padding-left: 45px;
+  }
+
+  .line {
+    left: 30px;
+  }
+
+  header .line {
+    top: initial;
+    bottom: 0;
+    height: 230px;
+    background: linear-gradient( 0deg, #b3b3b3 35%, rgba(0,0,0,0) 98% );
+  }
+
+  header a.scroll {
+    left: 19px;
+    bottom: 75px;
+  }
+
+  main .code {
+    margin-left: 40px;
+    font-size: 13px;
+  }
+
+  main .code .code-line:before {
+    left: -33px;
+  }
+
+  footer .social-links {
+    flex-direction: column;
+  }
+
+  footer .social-links a {
+    width: 100%;
+  }
+
+  footer .made-by br {
+    display: inline;
+  }
+
+  footer .made-by a {
+    line-height: 24px;
+  }
+
+  footer .contact-modal,
+  footer .contact-modal input,
+  footer .contact-modal textarea {
+    font-size: 22px;
+  }
+
+}
+
+@media (max-width: 530px) {
+
+  footer .contact-modal .submission .notifications svg.dismiss {
+    top: 30px;
+    right: 28px;
+  }
+
+}
+
+@media (max-height: 500px) {
+
+  footer .contact-modal textarea {
+    line-height: initial;
+    margin: 15px 0px 15px;
+  }
+
+  footer .contact-modal .submission .notifications {
+    margin-bottom: 15px;
+  }
+
+  footer .contact-modal .submission .notifications svg.dismiss {
+    top: 20px;
+  }
+
+}
+
+@media (max-height: 400px) and (max-width: 600px) {
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  header h2 {
+    font-size: 16px;
+    margin-right: 50px;
+    margin-bottom: 32vh;
+  }
+
+  header a.scroll {
+    bottom: 12.5vh;
+  }
+
+  footer .contact-modal h1 {
+    margin-top: 16px;
+  }
+
+  footer .contact-modal > svg.close-modal {
+    top: 19px;
+  }
+
+  footer .contact-modal,
+  footer .contact-modal input,
+  footer .contact-modal textarea {
+    font-size: 18px;
+  }
+
+  footer .contact-modal input {
+    width: 90px;
+  }
+
+  footer .contact-modal input.email-input {
+    width: 140px;
+  }
+
+  footer .contact-modal .submission button {
+    font-size: 15px;
+    padding: 16px 32px;
+  }
+
+  footer .contact-modal .submission .notifications {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 16px;
+  }
+
+  footer .contact-modal .submission .notifications svg.dismiss {
+    top: 17px;
+    width: 21px;
+  }
+
+}
+
+@media (max-width: 390px) {
+
+  main .code {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 360px) {
+
+  header h1 {
+    margin-left: 28px;
+  }
+
+  header h2 {
+    font-size: 17px;
+  }
+
+  header .line {
+    height: 210px;
+  }
+
+  header a.scroll {
+    bottom: 60px;
+    font-size: 14px;
+  }
+
+  main .code {
+    font-size: 11.5px;
+  }
+
+  footer h1 {
+    font-size: 26px;
+  }
+
+  footer .social-links {
+    font-size: 15px;
+  }
+
+  footer .social-links svg {
+    height: 18px;
+  }
+
+  footer .social-links .get-in-touch button {
+    font-size: 15px;
+    padding: 16px 30px;
+  }
+
+  footer .contact-modal h1 {
+    font-size: 33px;
+    height: 60px;
+    margin-top: 27px;
+  }
+
+  footer .contact-modal > svg.close-modal {
+    top: 32px;
+    height: 26px;
+  }
+
+  footer .contact-modal,
+  footer .contact-modal input,
+  footer .contact-modal textarea {
+    font-size: 20px;
+  }
+
+  footer .contact-modal textarea {
+    line-height: 1.3;
+  }
+
+  footer .contact-modal .submission .notifications {
+    padding-right: 100px;
+    font-size: 16px;
+  }
+
+  footer .contact-modal input.email-input {
+      width: 200px;
+  }
+
+  footer .made-by {
+    font-size: 11px;
+  }
+
+  footer .made-by .heart {
+    font-size: 10px;
+  }
+
+}
+
+@media (max-width: 345px) {
+
+  header h1 {
+    margin: 0 25px 30px 25px;
+  }
+
+  header h2 {
+    font-size: 16px;
+    margin-bottom: 43vh;
+    margin-right: 25px;
+    margin-left: 25px;
+  }
+
+  main .code {
+    font-size: 10.5px;
+  }
+
+  footer .contact-modal,
+  footer .contact-modal input,
+  footer .contact-modal textarea {
+    font-size: 18px;
+  }
+
+  footer .contact-modal input.email-input {
+    width: 155px;
+  }
+
+  footer .contact-modal .submission .notifications {
+    font-size: 15px;
+  }
+
 }
