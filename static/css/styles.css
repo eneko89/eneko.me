@@ -609,6 +609,11 @@ footer .contact-modal .submission .notifications {
   height: 59px;
 }
 
+footer .contact-modal .submission .notifications a {
+  color: #fff;
+  text-underline-offset: 2px;
+}
+
 footer .contact-modal .submission .notifications.show {
   transform: translateY(0px);
   opacity: 1;
@@ -616,10 +621,6 @@ footer .contact-modal .submission .notifications.show {
 
 footer .contact-modal .submission .notifications.error {
   background-color: #bb6464;
-}
-
-footer .contact-modal .submission .notifications.warning {
-  background-color: #c0924b;
 }
 
 footer .contact-modal .submission .notifications > div {
@@ -947,7 +948,7 @@ footer .made-by br {
 @media (max-width: 530px) {
 
   footer .contact-modal .submission .notifications svg.dismiss {
-    top: 30px;
+    top: 28px;
     right: 28px;
   }
 

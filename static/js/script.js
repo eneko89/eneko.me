@@ -40,7 +40,8 @@ class ContactModal {
     this.emailError = document.querySelectorAll('.contact-modal .notifications .email-error')[0];
     this.emptyError = document.querySelectorAll('.contact-modal .notifications .empty-error')[0];
     this.unknownError = document.querySelectorAll('.contact-modal .notifications .unknown-error')[0];
-    this.alreadySentWarning = document.querySelectorAll('.contact-modal .notifications .already-sent-warning')[0];
+    this.alreadySentError = document.querySelectorAll('.contact-modal .notifications .already-sent-error')[0];
+    this.clickToStartOver = document.querySelectorAll('.contact-modal .notifications .already-sent-error > a')[0];
     this.successNotification = document.querySelectorAll('.contact-modal .notifications .success-notification')[0];
     this.nameInput = document.querySelectorAll('.contact-modal input.name-input')[0];
     this.emailInput = document.querySelectorAll('.contact-modal input.email-input')[0];
@@ -56,6 +57,7 @@ class ContactModal {
     this.dismissIcon.addEventListener("click", () => this.dismissNotifications());
     this.closeIcon.addEventListener("click", event => this.close(event));
     this.submitButton.addEventListener("click", event => this.submit(event));
+    this.clickToStartOver.addEventListener("click", event => this.reset(event));
     window.addEventListener('keydown', event => this.close(event));
   }
 
@@ -70,6 +72,12 @@ class ContactModal {
       bodyElement.classList.remove('modal-open');
       event.preventDefault();
     }
+  }
+
+  reset(event) {
+    this.inputs.forEach(input => input.value = '');
+    this.dismissNotifications();
+    event.preventDefault();
   }
 
   isEmailValid() {
@@ -88,15 +96,12 @@ class ContactModal {
     this.emailError.classList.remove('show');
     this.emptyError.classList.remove('show');
     this.unknownError.classList.remove('show');
-    this.alreadySentWarning.classList.remove('show');
+    this.alreadySentError.classList.remove('show');
     this.successNotification.classList.remove('show');
-    this.notifications.classList.remove('error');
-    this.notifications.classList.remove('warning');
 
+    this.notifications.classList.remove('error');
     if (notification.indexOf('Error') !== -1) {
       this.notifications.classList.add('error');
-    } else if (notification.indexOf('Warning') !== -1) {
-      this.notifications.classList.add('warning');
     }
 
     this[notification].classList.add('show');
@@ -133,7 +138,23 @@ class ContactModal {
       this.showNotification('emailError', [this.emailInput]);
       return false;
     }
+    if (this.currentDataHash && this.currentDataHash === this.getDataHash()) {
+      this.showNotification('alreadySentError', this.inputs);
+      return false;
+    }
     return true;
+  }
+
+  getDataHash() {
+    const data = this.inputs.reduce((acc, cur) => acc + cur.value.trim(), '');
+    console.log('data: ', data);
+    let hash = 0, i, chr;
+    for (i = 0; i < data.length; i++) {
+      chr = data.charCodeAt(i);
+      hash = ((hash << 5) - hash) + chr;
+      hash |= 0;
+    }
+    return hash;
   }
 
   submit(event) {
@@ -150,6 +171,7 @@ class ContactModal {
         this.dismissNotifications();
         if (request.status === 200) {
           this.showNotification('successNotification');
+          this.currentDataHash = this.getDataHash();
         } else {
           this.showNotification('unknownError');
         }
