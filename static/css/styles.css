@@ -16,7 +16,7 @@ a:focus {
 }
 
 ::selection {
-  background-color: #e4e4e4;
+  background-color: #e6e6e6;
 }
 
 .nowrap {
@@ -25,7 +25,7 @@ a:focus {
 
 body {
   margin: 0;
-  background-color: #eaeaea;
+  background-color: #ededed;
   overscroll-behavior: none;
 }
 
@@ -169,17 +169,17 @@ header h2 > span.reveal-block {
   left: 40px;
   top: 0;
   position: absolute;
-  background: #b3b3b3;
+  background: #b4b4b4;
   background: linear-gradient(
     0deg,
-    #b3b3b3 35%,
+    #b4b4b4 35%,
     rgba(0,0,0,0) 98%
   );
 }
 
 main .line,
 footer .line {
-  background: #b3b3b3;
+  background: #b4b4b4;
 }
 
 header a.scroll {
@@ -218,10 +218,10 @@ header a.scroll:before {
   left: 0;
   width: 24px;
   height: 40px;
-  border: 2px solid #b3b3b3;
+  border: 2px solid #b4b4b4;
   border-radius: 12px;
   content: "";
-  background-color: #eaeaea;
+  background-color: #ededed;
   transition: border-color 300ms;
 }
 
@@ -237,7 +237,7 @@ header a.scroll:after {
   left: 11px;
   width: 2px;
   height: 8px;
-  background: #b3b3b3;
+  background: #b4b4b4;
   border-radius: 1px;
   content: "";
   animation-name: scroll;
@@ -283,7 +283,7 @@ main .code .code-line:before {
 }
 
 main .code .code-line:hover:after {
-  background-color: #e4e4e4;
+  background-color: #e6e6e6;
   top: 0;
   width: 300%;
   left: -100%;
@@ -354,7 +354,7 @@ button {
 }
 
 button:hover {
-  color: #eaeaea;
+  color: #ededed;
 }
 
 button:after {
@@ -467,7 +467,7 @@ footer .contact-modal {
   width: 100%;
   visibility: hidden;
   z-index: 10;
-  background: #eaeaea;
+  background: #ededed;
   transform: translateY(-50px);
   opacity: 0;
   transition: opacity .15s linear, transform .3s ease-out, visibility .3s;
@@ -522,7 +522,7 @@ footer .contact-modal input:-webkit-autofill,
 footer .contact-modal input:-webkit-autofill:hover,
 footer .contact-modal input:-webkit-autofill:focus {
   -webkit-text-fill-color: #3c3c3c;
-  -webkit-box-shadow: 0 0 0px 1000px #eaeaea inset;
+  -webkit-box-shadow: 0 0 0px 1000px #ededed inset;
 }
 
 footer .contact-modal input.email-input {
@@ -642,7 +642,7 @@ footer .contact-modal .submission .notifications svg.dismiss {
 
 footer .made-by {
   font-family: 'Roboto', sans-serif;
-  color: #868686;
+  color: #878787;
   font-size: 12px;
   padding-bottom: 15px;
   letter-spacing: 0.2px;
@@ -658,11 +658,11 @@ footer .made-by .heart {
 }
 
 footer .made-by a {
-  color: #868686;
+  color: #878787;
 }
 
 footer .made-by a:visited {
-  color: #868686;
+  color: #878787;
 }
 
 footer .made-by a:hover {
@@ -904,7 +904,7 @@ footer .made-by br {
     top: initial;
     bottom: 0;
     height: 230px;
-    background: linear-gradient( 0deg, #b3b3b3 35%, rgba(0,0,0,0) 98% );
+    background: linear-gradient( 0deg, #b4b4b4 35%, rgba(0,0,0,0) 98% );
   }
 
   header a.scroll {
