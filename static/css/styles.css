@@ -298,7 +298,7 @@ main .code .code-line .dot {
 }
 
 main .code .code-line .comment {
-  color: #888;
+  color: #8c8c8c;
 }
 
 main .code .code-line .keyword {
