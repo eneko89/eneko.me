@@ -1046,7 +1046,7 @@ footer .made-by br {
   }
 
   header .line {
-    height: 210px;
+    height: 205px;
   }
 
   header a.scroll {
@@ -1123,9 +1123,20 @@ footer .made-by br {
 
   header h2 {
     font-size: 16px;
-    margin-bottom: 43vh;
     margin-right: 25px;
     margin-left: 25px;
+  }
+
+  header a.scroll:before {
+    top: 0;
+    left: 1px;
+    width: 21px;
+    height: 36px;
+  }
+
+  header a.scroll:after {
+    top: 7px;
+    height: 6px;
   }
 
   main .code {
