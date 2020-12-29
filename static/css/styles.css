@@ -173,7 +173,7 @@ header h2 > span.reveal-block {
   background: linear-gradient(
     0deg,
     #b4b4b4 35%,
-    rgba(0,0,0,0) 98%
+    rgba(180,180,180,0) 98%
   );
 }
 
@@ -920,7 +920,6 @@ footer .made-by br {
     top: initial;
     bottom: 0;
     height: 230px;
-    background: linear-gradient( 0deg, #b4b4b4 35%, rgba(0,0,0,0) 98% );
   }
 
   header a.scroll {
