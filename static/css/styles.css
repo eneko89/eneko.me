@@ -142,15 +142,10 @@ header h2 {
   margin-left: 62px;
   position: relative;
   overflow: hidden;
-}
-
-header h2 > span.reveal-text {
+  animation: fade-in .4s, slide-left .4s;
+  animation-fill-mode: both;
   animation-delay: 2.2s;
-}
-
-header h2 > span.reveal-block {
-  animation-delay: 1.8s;
-  background: #444444;
+  will-change: transform;
 }
 
 @keyframes reveal {
@@ -161,6 +156,11 @@ header h2 > span.reveal-block {
 @keyframes fade-in {
   0% { opacity: 0; }
   to { opacity: 1; }
+}
+
+@keyframes slide-left {
+  0% { transform: translateX(20px); }
+  to { transform: translateX(0px); }
 }
 
 .line {
@@ -203,7 +203,7 @@ footer {
   animation: fade-in .4s;
   will-change: opacity;
   animation-fill-mode: forwards;
-  animation-delay: 2.3s;
+  animation-delay: 2.2s;
 }
 
 header a.scroll:hover,
