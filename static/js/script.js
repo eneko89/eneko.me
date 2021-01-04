@@ -4,7 +4,6 @@
  */
 
 // Main elements
-const bodyElement = document.getElementsByTagName('body')[0];
 const mainElement = document.getElementsByTagName('main')[0];
 const scrollToAnchor = document.getElementsByClassName('scroll')[0];
 const getInTouchButton = document.querySelectorAll('.get-in-touch > button')[0];
@@ -13,6 +12,15 @@ const getInTouchButton = document.querySelectorAll('.get-in-touch > button')[0];
 if(history && history.scrollRestoration) {
   history.scrollRestoration = "manual";
 }
+
+// Removes .no-animate on body element when the background image
+// loads and removes .no-scroll class when the animation finishes
+var backgroundImg = new Image();
+backgroundImg.onload = () => {
+  document.body.classList.remove('no-animate');
+  window.setTimeout(() => document.body.classList.remove('no-scroll'), 2000);
+}
+backgroundImg.src = 'css/images/bg.jpg';
 
 scrollToAnchor.addEventListener('click', () => {
   mainElement.scrollIntoView({
@@ -63,13 +71,13 @@ class ContactModal {
 
   open() {
     this.container.classList.add('open');
-    bodyElement.classList.add('modal-open');
+    document.body.classList.add('no-scroll');
   }
 
   close(event) {
     if (event.type === 'click' || (event.key === 'Escape' || event.key === 'Esc')) {
       this.container.classList.remove('open');
-      bodyElement.classList.remove('modal-open');
+      document.body.classList.remove('no-scroll');
       event.preventDefault();
     }
   }
