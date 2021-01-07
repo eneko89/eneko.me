@@ -2,6 +2,8 @@
  * Copyright © 2020 Eneko Sanz <contact@eneko.me>
  * File distributed under the MIT license
  */
+@import 'normalize.css';
+@import 'fonts.css';
 
 html {
   box-sizing: border-box;
