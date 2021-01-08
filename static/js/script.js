@@ -10,7 +10,7 @@ const getInTouchButton = document.querySelectorAll('.get-in-touch > button')[0];
 
 // Avoids scroll restoration on page reload
 if(history && history.scrollRestoration) {
-  history.scrollRestoration = "manual";
+  history.scrollRestoration = 'manual';
 }
 
 // Removes .no-animate on body element when the background image
@@ -19,14 +19,14 @@ var backgroundImg = new Image();
 backgroundImg.onload = () => {
   document.body.classList.remove('no-animate');
   window.setTimeout(() => document.body.classList.remove('no-scroll'), 2000);
-}
+};
 backgroundImg.src = 'css/images/bg.jpg';
 
 scrollToAnchor.addEventListener('click', () => {
   mainElement.scrollIntoView({
     behavior: 'smooth',
     block: 'start'
-  })
+  });
   scrollToAnchor.blur();
   event.preventDefault();
 });
@@ -34,8 +34,8 @@ scrollToAnchor.addEventListener('click', () => {
 let contactModal;
 
 getInTouchButton.addEventListener('click', () => {
-    contactModal = contactModal || new ContactModal();
-    contactModal.open();
+  contactModal = contactModal || new ContactModal();
+  contactModal.open();
 });
 
 class ContactModal {
@@ -62,10 +62,10 @@ class ContactModal {
   }
 
   setListeners() {
-    this.dismissIcon.addEventListener("click", () => this.dismissNotifications());
-    this.closeIcon.addEventListener("click", event => this.close(event));
-    this.submitButton.addEventListener("click", event => this.submit(event));
-    this.clickToStartOver.addEventListener("click", event => this.reset(event));
+    this.dismissIcon.addEventListener('click', () => this.dismissNotifications());
+    this.closeIcon.addEventListener('click', event => this.close(event));
+    this.submitButton.addEventListener('click', event => this.submit(event));
+    this.clickToStartOver.addEventListener('click', event => this.reset(event));
     window.addEventListener('keydown', event => this.close(event));
   }
 
@@ -189,7 +189,7 @@ class ContactModal {
         this.hideButtonSpinner();
         this.dismissNotifications();
         this.showNotification('unknownError');
-      }
+      };
 
       request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
       request.send(JSON.stringify({

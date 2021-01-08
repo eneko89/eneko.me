@@ -4,15 +4,15 @@
  */
 
 // Express, nodemailer and global middleware.
-var express = require('express'),
-    nodemailer = require('nodemailer'),
-    morgan = require('morgan'),
-    bodyParser = require('body-parser'),
-    compression = require('compression');
+const express = require('express');
+const nodemailer = require('nodemailer');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const compression = require('compression');
 
 // Nodemailer's Gmail transporter with OAuth2 authentication to send mails
 // on behalf of <contact@eneko.me> (Google Apps account with custom domain).
-var gmTransporter = nodemailer.createTransport({
+const gmTransporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
   secure: true,
@@ -25,7 +25,7 @@ var gmTransporter = nodemailer.createTransport({
   }
 });
 
-var app = express();
+const app = express();
 
 // Sets server port.
 app.set('port', process.env.PORT || 3000);
@@ -61,13 +61,13 @@ app.post('/contact', function(req, res) {
       to: 'contact@eneko.me',
       subject: '[eneko.me] [' + req.body.name + ', ' + req.body.email + ']',
       text: req.body.text
-    }, function(error, resp) {
-       if (error) {
-          console.log(error);
-          res.status(500).send({ error: 'Something blew up...' });
-       } else {
-          res.send();
-       }
+    }, function(error) {
+      if (error) {
+        console.log(error);
+        res.status(500).send({ error: 'Something blew up...' });
+      } else {
+        res.send();
+      }
     });
   } else {
     res.status(400).send({ error: 'Wrong e-mail address.' });
@@ -81,7 +81,7 @@ app.post('/contact', function(req, res) {
    * @return {Boolean}        True if valid, false otherwise.
    */
   function isValidMail(email) {
-    var mailRegExp = /^.+@.+\..+$/;
+    const mailRegExp = /^.+@.+\..+$/;
     return mailRegExp.test(email);
   }
 });
@@ -89,7 +89,7 @@ app.post('/contact', function(req, res) {
 // Reply with a 404 if nothing previously matches.
 app.use(function(req, res) {
   res.status(404).send('Not found!');
-})
+});
 
 // Start the HTTP server.
 app.listen(app.get('port'), function() {
