@@ -5,6 +5,17 @@
   "author": "Eneko <contact@eneko.me>",
   "version": "0.1.0",
   "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node index.js",
+    "dev": "npm run build && (npm run watch & nodemon -r dotenv/config index.js --ignore static)",
+    "eslint": "eslint index.js 'static/js/**/!(*.min).js'",
+    "build:js": "terser static/js/script.js -m -c -o static/js/script.min.js",
+    "build:css": "cleancss static/css/styles.css -o static/css/styles.min.css",
+    "build": "npm run build:js && npm run build:css",
+    "watch:js": "onchange 'static/js/**/!(*.min).js' -- npm run build:js",
+    "watch:css": "onchange 'static/css/**/!(*.min).css' -- npm run build:css",
+    "watch": "npm run watch:js & npm run watch:css"
+  },
   "dependencies": {
     "express": "~4.17.1",
     "morgan": "~1.10.0",
@@ -13,8 +24,12 @@
     "nodemailer": "~6.4.13"
   },
   "devDependencies": {
-    "gulp": "~4.0.2",
-    "dotenv": "~8.2.0"
+    "dotenv": "~8.2.0",
+    "terser": "~5.5.1",
+    "clean-css-cli": "~4.3.0",
+    "eslint": "~7.17.0",
+    "onchange": "~7.1.0",
+    "nodemon": "~2.0.7"
   },
   "engines": {
     "node": "13.8.0",
