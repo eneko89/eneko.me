@@ -2,7 +2,8 @@
  * Copyright © 2020 Eneko Sanz <contact@eneko.me>
  * File distributed under the MIT license
  */
-@import 'normalize.css';
+
+@import 'lib/normalize.css';
 @import 'fonts.css';
 
 html {
@@ -43,7 +44,7 @@ body.no-animate *:after {
 
 header {
   height: 100vh;
-  background-image: url(images/bg.jpg);
+  background-image: url('../img/bg.jpg');
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;

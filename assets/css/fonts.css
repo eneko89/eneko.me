@@ -5,8 +5,8 @@
   font-weight: 400;
   font-display: block;
   src: local(''),
-       url('fonts/roboto-400-latin.woff2') format('woff2'),
-       url('fonts/roboto-400-latin.woff') format('woff');
+       url('../fonts/roboto-400-latin.woff2') format('woff2'),
+       url('../fonts/roboto-400-latin.woff') format('woff');
 }
 
 /* roboto-500 - latin */
@@ -16,8 +16,8 @@
   font-weight: 500;
   font-display: block;
   src: local(''),
-       url('fonts/roboto-500-latin.woff2') format('woff2'),
-       url('fonts/roboto-500-latin.woff') format('woff');
+       url('../fonts/roboto-500-latin.woff2') format('woff2'),
+       url('../fonts/roboto-500-latin.woff') format('woff');
 }
 
 /* roboto-condensed-400 - latin */
@@ -27,8 +27,8 @@
   font-weight: 400;
   font-display: block;
   src: local(''),
-       url('fonts/roboto_condensed-400-latin.woff2') format('woff2'),
-       url('fonts/roboto_condensed-400-latin.woff') format('woff');
+       url('../fonts/roboto_condensed-400-latin.woff2') format('woff2'),
+       url('../fonts/roboto_condensed-400-latin.woff') format('woff');
 }
 
 /* roboto-mono-400 - latin */
@@ -38,6 +38,6 @@
   font-weight: 400;
   font-display: block;
   src: local(''),
-       url('fonts/roboto-mono-latin-400.woff2') format('woff2'),
-       url('fonts/roboto-mono-latin-400.woff') format('woff');
+       url('../fonts/roboto-mono-latin-400.woff2') format('woff2'),
+       url('../fonts/roboto-mono-latin-400.woff') format('woff');
 }

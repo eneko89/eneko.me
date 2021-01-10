@@ -20,7 +20,7 @@ backgroundImg.onload = () => {
   document.body.classList.remove('no-animate');
   window.setTimeout(() => document.body.classList.remove('no-scroll'), 2000);
 };
-backgroundImg.src = 'css/images/bg.jpg';
+backgroundImg.src = 'img/bg.jpg';
 
 scrollToAnchor.addEventListener('click', () => {
   mainElement.scrollIntoView({

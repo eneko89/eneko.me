@@ -7,13 +7,13 @@
   "main": "server.js",
   "scripts": {
     "start": "npm run build && node server.js",
-    "dev": "npm run build && (npm run watch & nodemon -r dotenv/config server.js --ignore static)",
-    "eslint": "eslint server.js 'static/js/**/!(*.min).js'",
-    "build:js": "npm run eslint &&  terser static/js/scripts.js -m -c -o static/js/scripts.min.js",
-    "build:css": "cleancss static/css/styles.css -o static/css/styles.min.css",
+    "dev": "npm run build && (npm run watch & nodemon -r dotenv/config server.js -w server.js)",
+    "eslint": "eslint server.js 'assets/js/**/!(*.min).js'",
+    "build:js": "npm run eslint &&  terser assets/js/scripts.js -m -c -o assets/js/scripts.min.js",
+    "build:css": "cleancss assets/css/styles.css -o assets/css/styles.min.css",
     "build": "npm run build:js && npm run build:css",
-    "watch:js": "onchange 'static/js/**/!(*.min).js' -- npm run build:js",
-    "watch:css": "onchange 'static/css/**/!(*.min).css' -- npm run build:css",
+    "watch:js": "onchange 'assets/js/**/!(*.min).js' -- npm run build:js",
+    "watch:css": "onchange 'assets/css/**/!(*.min).css' -- npm run build:css",
     "watch": "npm run watch:js & npm run watch:css"
   },
   "dependencies": {

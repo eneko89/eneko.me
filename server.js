@@ -45,13 +45,8 @@ app.use(bodyParser.json());
 
 // Serve static files.
 // TODO: When things settle down a little bit, set Cache-Control header
-// to a reasonale max-age value and start versioning static assets.
-app.use(express.static('static'));
-
-// Serve static index.html file.
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
+// to a reasonable max-age value and start versioning static assets.
+app.use(express.static('assets'));
 
 // Contact endpoint, sends an e-mail on behalf of <contact@eneko.me>.
 app.post('/contact', function(req, res) {
