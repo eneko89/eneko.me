@@ -50,6 +50,7 @@ app.use(express.static('dist'));
 
 // Contact endpoint, sends an e-mail on behalf of <contact@eneko.me>.
 app.post('/contact', function(req, res) {
+  const isValidMail = email => /^.+@.+\..+$/.test(email);
   if (isValidMail(req.body.email)) {
     gmTransporter.sendMail({
       from: 'contact@eneko.me',
@@ -66,18 +67,6 @@ app.post('/contact', function(req, res) {
     });
   } else {
     res.status(400).send({ error: 'Wrong e-mail address.' });
-  }
-
-  /**
-   * Validates an e-mail address.
-   * 
-   * @param  {String}  email  E-mail address.
-   * 
-   * @return {Boolean}        True if valid, false otherwise.
-   */
-  function isValidMail(email) {
-    const mailRegExp = /^.+@.+\..+$/;
-    return mailRegExp.test(email);
   }
 });
 
