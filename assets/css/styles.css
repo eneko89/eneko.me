@@ -229,7 +229,7 @@ header a.scroll:before {
   height: 40px;
   border: 2px solid #b4b4b4;
   border-radius: 12px;
-  content: "";
+  content: '';
   background-color: #ededed;
   transition: border-color 300ms;
 }
@@ -248,7 +248,7 @@ header a.scroll:after {
   height: 8px;
   background: #b4b4b4;
   border-radius: 1px;
-  content: "";
+  content: '';
   animation-name: scroll;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -297,7 +297,7 @@ main .code .code-line:hover:after {
   width: 300%;
   left: -100%;
   position: absolute;
-  content: "";
+  content: '';
   height: 100%;
   z-index: -1;
 }
@@ -472,7 +472,7 @@ footer .social-links .get-in-touch button {
 }
 
 footer .social-links .get-in-touch:before {
-  content: "OR";
+  content: 'OR';
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   position: relative;
@@ -744,7 +744,7 @@ footer .made-by br {
   }
 
   footer .social-links .get-in-touch:before {
-    content: "";
+    content: '';
   }
 
   footer .contact-modal form {
