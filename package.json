@@ -6,30 +6,36 @@
   "version": "0.1.0",
   "main": "server.js",
   "scripts": {
-    "start": "npm run build && node server.js",
+    "start": "npm run build && rm -f dist/{js,css}/*.min.* && node server.js",
     "dev": "npm run build && (npm run watch & nodemon -r dotenv/config server.js -w server.js)",
-    "eslint": "eslint server.js 'assets/js/**/!(*.min).js'",
-    "build:js": "npm run eslint &&  terser assets/js/scripts.js -m -c -o assets/js/scripts.min.js",
-    "build:css": "cleancss assets/css/styles.css -o assets/css/styles.min.css",
-    "build": "npm run build:js && npm run build:css",
-    "watch:js": "onchange 'assets/js/**/!(*.min).js' -- npm run build:js",
-    "watch:css": "onchange 'assets/css/**/!(*.min).css' -- npm run build:css",
-    "watch": "npm run watch:js & npm run watch:css"
+    "eslint": "eslint server.js 'assets/js/**/*.js'",
+    "build:assets": "mkdir -p dist && rm -rf dist/{fonts,img}/* dist/*.ico && cp -r assets/{fonts,img,*.ico} dist",
+    "build:js": "mkdir -p dist/js && rm -f dist/js/* && npm run eslint && terser assets/js/scripts.js -m -c -o dist/js/scripts.min.js",
+    "build:css": "mkdir -p dist/css && rm -f dist/css/* && cleancss --skip-rebase assets/css/styles.css -o dist/css/styles.min.css",
+    "build:fprints": "cachebust -nq -s dist/js/scripts.min.js,dist/css/styles.min.css -t dist/index.html",
+    "build:html": "mkdir -p dist && cp assets/index.html dist && npm run build:fprints",
+    "build": "npm run build:assets && npm run build:js && npm run build:css && npm run build:html",
+    "watch:assets": "onchange 'assets/{fonts,img}/*' 'assets/*.ico' -- npm run build:assets",
+    "watch:js": "onchange 'assets/js/**/*.js' -- /bin/sh -c 'npm run build:js && npm run build:html'",
+    "watch:css": "onchange 'assets/css/**/*.css' -- /bin/sh -c 'npm run build:css && npm run build:html'",
+    "watch:html": "onchange assets/index.html -- npm run build:html",
+    "watch": "npm run watch:assets & npm run watch:js & npm run watch:css & npm run watch:html"
   },
   "dependencies": {
     "express": "~4.17.1",
     "morgan": "~1.10.0",
     "compression": "~1.7.4",
     "body-parser": "~1.19.0",
-    "nodemailer": "~6.4.13"
-  },
-  "devDependencies": {
-    "dotenv": "~8.2.0",
+    "nodemailer": "~6.4.13",
     "terser": "~5.5.1",
     "clean-css-cli": "~4.3.0",
     "eslint": "~7.17.0",
-    "onchange": "~7.1.0",
-    "nodemon": "~2.0.7"
+    "@sparkbox/cachebust": "~0.3.0"
+  },
+  "devDependencies": {
+    "dotenv": "~8.2.0",
+    "nodemon": "~2.0.7",
+    "onchange": "~7.1.0"
   },
   "engines": {
     "node": "13.8.0",

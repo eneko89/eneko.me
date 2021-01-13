@@ -1,5 +1,8 @@
-# NPM dependency directory
+# NPM dependency folder
 node_modules
+
+# Build folder
+dist
 
 # Environment variables
 .env

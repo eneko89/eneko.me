@@ -43,10 +43,10 @@ if (app.get('env') === 'development') {
 // Parse application/json content-type bodies (populates req.body).
 app.use(bodyParser.json());
 
-// Serve static files.
-// TODO: When things settle down a little bit, set Cache-Control header
-// to a reasonable max-age value and start versioning static assets.
-app.use(express.static('assets'));
+// Serve built assets (bundled, minified, fingerprinted...) from the /dist
+// folder. Try 'npm run dev' to build, start a dev server, load env vars
+// from a local .env file and watch for changes while developing.
+app.use(express.static('dist'));
 
 // Contact endpoint, sends an e-mail on behalf of <contact@eneko.me>.
 app.post('/contact', function(req, res) {
