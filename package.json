@@ -7,8 +7,8 @@
   "main": "server.js",
   "scripts": {
     "start": "npm run build && rm -f dist/{js,css}/*.min.* && node server.js",
-    "dev": "npm run build && (npm run watch & nodemon -r dotenv/config server.js -w server.js)",
-    "eslint": "eslint server.js 'assets/js/**/*.js'",
+    "dev": "npm run build && (npm run watch & nodemon -r dotenv/config server.js -w server.js -x 'eslint server.js && node')",
+    "eslint": "eslint 'assets/js/**/*.js'",
     "build:assets": "mkdir -p dist && rm -rf dist/{fonts,img}/* dist/*.ico && cp -r assets/{fonts,img,*.ico} dist",
     "build:js": "mkdir -p dist/js && rm -f dist/js/* && npm run eslint && terser assets/js/scripts.js -m -c -o dist/js/scripts.min.js",
     "build:css": "mkdir -p dist/css && rm -f dist/css/* && cleancss --skip-rebase assets/css/styles.css -o dist/css/styles.min.css",
