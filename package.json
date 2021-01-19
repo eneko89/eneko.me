@@ -6,20 +6,16 @@
   "version": "0.1.0",
   "main": "server.js",
   "scripts": {
-    "start": "npm run build && rm -f dist/{js,css}/*.min.* && node server.js",
-    "dev": "npm run build && (npm run watch & nodemon -r dotenv/config server.js -w server.js -x 'eslint server.js && node')",
+    "start": "npm run build && node server.js",
+    "dev": "npm run build && (npm run watch & npm run nodemon)",
+    "nodemon": "nodemon -r dotenv/config server.js -w server.js -x 'eslint server.js && node'",
     "eslint": "eslint 'assets/js/**/*.js'",
-    "build:assets": "mkdir -p dist && rm -rf dist/{fonts,img}/* dist/*.ico && cp -r assets/{fonts,img,*.ico} dist",
-    "build:js": "mkdir -p dist/js && rm -f dist/js/* && npm run eslint && terser assets/js/scripts.js -m -c -o dist/js/scripts.min.js",
-    "build:css": "mkdir -p dist/css && rm -f dist/css/* && cleancss --skip-rebase assets/css/styles.css -o dist/css/styles.min.css",
-    "build:fprints": "cachebust -nq -s dist/js/scripts.min.js,dist/css/styles.min.css -t dist/index.html",
-    "build:html": "mkdir -p dist && cp assets/index.html dist && npm run build:fprints",
-    "build": "npm run build:assets && npm run build:js && npm run build:css && npm run build:html",
-    "watch:assets": "onchange 'assets/{fonts,img}/*' 'assets/*.ico' -- npm run build:assets",
-    "watch:js": "onchange 'assets/js/**/*.js' -- /bin/sh -c 'npm run build:js && npm run build:html'",
-    "watch:css": "onchange 'assets/css/**/*.css' -- /bin/sh -c 'npm run build:css && npm run build:html'",
-    "watch:html": "onchange assets/index.html -- npm run build:html",
-    "watch": "npm run watch:assets & npm run watch:js & npm run watch:css & npm run watch:html"
+    "build:assets": "mkdir -p dist && cp -r assets/{fonts,img,*.ico,*.html} dist",
+    "build:js": "mkdir -p dist/js && npm run eslint && terser assets/js/scripts.js -m -c -o dist/js/scripts.min.js",
+    "build:css": "mkdir -p dist/css && cleancss --skip-rebase assets/css/styles.css -o dist/css/styles.min.css",
+    "build:fprints": "cachekill -r -l 8 -s dist/{js,css}/*.min.{js,css} dist/{fonts,img,*.ico} -t dist/**/*.{js,css,html}",
+    "build": "rm -rf dist && (npm run build:assets &  npm run build:js & npm run build:css & wait) && npm run build:fprints",
+    "watch": "onchange 'assets/**/*' -- npm run build"
   },
   "dependencies": {
     "express": "~4.17.1",
@@ -30,7 +26,7 @@
     "terser": "~5.5.1",
     "clean-css-cli": "~4.3.0",
     "eslint": "~7.17.0",
-    "@sparkbox/cachebust": "~0.3.0"
+    "cachekill": "~1.0.2"
   },
   "devDependencies": {
     "dotenv": "~8.2.0",
