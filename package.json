@@ -7,13 +7,13 @@
   "main": "server.js",
   "scripts": {
     "start": "npm run build && node server.js",
-    "dev": "npm run build && (npm run watch & npm run nodemon)",
-    "nodemon": "nodemon -r dotenv/config server.js -w server.js -x 'eslint server.js && node'",
+    "dev": "npm run build && (npm run watch & npm run serve)",
+    "serve": "nodemon -r dotenv/config server.js -w server.js -x 'eslint server.js && node'",
     "eslint": "eslint 'assets/js/**/*.js'",
     "build:assets": "mkdir -p dist && cp -r assets/{fonts,img,*.ico,*.html} dist",
     "build:js": "mkdir -p dist/js && npm run eslint && terser assets/js/scripts.js -m -c -o dist/js/scripts.min.js",
     "build:css": "mkdir -p dist/css && cleancss --skip-rebase assets/css/styles.css -o dist/css/styles.min.css",
-    "build:fprints": "cachekill -r -l 8 -s dist/{js,css}/*.min.{js,css} dist/{fonts,img,*.ico} -t dist/**/*.{js,css,html}",
+    "build:fprints": "cachekill -rl 8 -s 'dist/**/!(*.html)' -t 'dist/**/*.{js,css,html}'",
     "build": "rm -rf dist && (npm run build:assets &  npm run build:js & npm run build:css & wait) && npm run build:fprints",
     "watch": "onchange 'assets/**/*' -- npm run build"
   },
