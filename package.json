@@ -10,11 +10,11 @@
     "dev": "npm run build && (npm run watch & npm run serve)",
     "serve": "nodemon -r dotenv/config server.js -w server.js -x 'eslint server.js && node'",
     "eslint": "eslint 'assets/js/**/*.js'",
-    "build:assets": "mkdir -p dist && cp -r assets/{fonts,img,*.ico,*.html} dist",
-    "build:js": "mkdir -p dist/js && npm run eslint && terser assets/js/scripts.js -m -c -o dist/js/scripts.min.js",
-    "build:css": "mkdir -p dist/css && cleancss --skip-rebase assets/css/styles.css -o dist/css/styles.min.css",
+    "build:assets": "cpy '**' '!**/{*.css,*.js}' '../dist' --parents --cwd=assets",
+    "build:js": "make-dir dist/js && npm run eslint && terser assets/js/scripts.js -m -c -o dist/js/scripts.min.js",
+    "build:css": "make-dir dist/css && cleancss --skip-rebase assets/css/styles.css -o dist/css/styles.min.css",
     "build:fprints": "cachekill -rl 8 -s 'dist/**/!(*.html)' -t 'dist/**/*.{js,css,html}'",
-    "build": "rm -rf dist && (npm run build:assets &  npm run build:js & npm run build:css & wait) && npm run build:fprints",
+    "build": "del-cli dist && (npm run build:assets &  npm run build:js & npm run build:css & wait) && npm run build:fprints",
     "watch": "onchange 'assets/**/*' -- npm run build"
   },
   "dependencies": {
@@ -26,7 +26,10 @@
     "terser": "~5.5.1",
     "clean-css-cli": "~4.3.0",
     "eslint": "~7.17.0",
-    "cachekill": "~1.0.2"
+    "cachekill": "~1.0.2",
+    "make-dir-cli": "~2.0.0",
+    "cpy-cli": "~3.1.1",
+    "del-cli": "~3.0.1"
   },
   "devDependencies": {
     "dotenv": "~8.2.0",
