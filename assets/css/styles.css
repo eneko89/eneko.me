@@ -153,6 +153,7 @@ header h2 {
   overflow: hidden;
   animation: fade-in .4s, slide-left .3s;
   animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
   animation-delay: 1.6s;
   will-change: transform;
 }
@@ -212,6 +213,7 @@ footer {
   animation: fade-in .3s;
   will-change: opacity;
   animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
   animation-delay: 1.6s;
 }
 
