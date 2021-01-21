@@ -151,7 +151,7 @@ header h2 {
   margin-left: 62px;
   position: relative;
   overflow: hidden;
-  animation: fade-in .4s, slide-left .4s;
+  animation: fade-in .4s, slide-left .3s;
   animation-fill-mode: both;
   animation-delay: 1.6s;
   will-change: transform;
@@ -168,7 +168,7 @@ header h2 {
 }
 
 @keyframes slide-left {
-  0% { transform: translateX(15px); }
+  0% { transform: translateX(10px); }
   to { transform: translateX(0px); }
 }
 
@@ -209,7 +209,7 @@ header a.scroll,
 main,
 footer {
   opacity: 0;
-  animation: fade-in .4s;
+  animation: fade-in .3s;
   will-change: opacity;
   animation-fill-mode: forwards;
   animation-delay: 1.6s;
