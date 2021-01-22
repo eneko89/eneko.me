@@ -26,7 +26,7 @@
     "terser": "~5.5.1",
     "clean-css-cli": "~4.3.0",
     "eslint": "~7.17.0",
-    "cachekill": "~1.0.2",
+    "cachekill": "~1.0.5",
     "make-dir-cli": "~2.0.0",
     "cpy-cli": "~3.1.1",
     "del-cli": "~3.0.1"
