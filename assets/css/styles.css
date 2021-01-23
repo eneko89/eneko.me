@@ -971,15 +971,6 @@ footer .made-by br {
 
 }
 
-@media (max-width: 530px) {
-
-  footer .contact-modal .submission .notifications svg.dismiss {
-    top: 28px;
-    right: 28px;
-  }
-
-}
-
 @media (max-height: 500px) {
 
   footer .contact-modal textarea {
@@ -993,6 +984,15 @@ footer .made-by br {
 
   footer .contact-modal .submission .notifications svg.dismiss {
     top: 20px;
+  }
+
+}
+
+@media (max-width: 530px) {
+
+  footer .contact-modal .submission .notifications svg.dismiss {
+    top: 28px;
+    right: 28px;
   }
 
 }
