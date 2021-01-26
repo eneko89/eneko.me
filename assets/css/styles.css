@@ -908,7 +908,7 @@ footer .made-by br {
 @media (max-width: 560px) {
 
   header {
-    background-position: 58% 78%;
+    background-position: 42% 58%;
     background-size: initial;
   }
 
@@ -934,7 +934,7 @@ footer .made-by br {
   }
 
   .line {
-    left: 30px;
+    left: 8vw;
   }
 
   header .line {
@@ -944,17 +944,17 @@ footer .made-by br {
   }
 
   header a.scroll {
-    left: 19px;
+    left: calc(8.3vw - 12px);
     bottom: 21.5vh;
   }
 
   main .code {
-    margin-left: 40px;
-    font-size: 13px;
+    margin-left: 10.5vw;
+    font-size: 3.3vw;
   }
 
   main .code .code-line:before {
-    left: -33px;
+    left: -8.4vw;
   }
 
   footer .social-links {
@@ -1063,19 +1063,7 @@ footer .made-by br {
 
 }
 
-@media (max-width: 390px) {
-
-  main .code {
-    font-size: 12px;
-  }
-
-}
-
 @media (max-width: 360px) {
-
-  main .code {
-    font-size: 11.5px;
-  }
 
   footer h1 {
     font-size: 26px;
@@ -1135,10 +1123,6 @@ footer .made-by br {
 }
 
 @media (max-width: 345px) {
-
-  main .code {
-    font-size: 10.5px;
-  }
 
   footer .contact-modal,
   footer .contact-modal input,
