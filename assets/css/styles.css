@@ -908,24 +908,28 @@ footer .made-by br {
 @media (max-width: 560px) {
 
   header {
-    background-position: 58% bottom;
+    background-position: 58% 78%;
+    background-size: initial;
+  }
+
+  header > div {
+    height: 100vh;
   }
 
   header h1 {
-    margin: 0 30px 30px 30px;
+    margin: 8vw 8vw 6vw 8vw;
     font-size: 8.6vw;
     line-height: 1.4;
   }
 
   header h2 {
-    font-size: 18px;
-    margin-bottom:49vh;
-    margin-right: 30px;
-    margin-left: 30px;
+    font-size: 5vw;
+    margin-right: 8vw;
+    margin-left: 8vw;
+    margin-bottom: 0;
   }
 
   footer > div {
-    width: 800px;
     padding-left: 45px;
   }
 
@@ -936,12 +940,12 @@ footer .made-by br {
   header .line {
     top: initial;
     bottom: 0;
-    height: 37.5vh;
+    height: 44.5vh;
   }
 
   header a.scroll {
     left: 19px;
-    bottom: 16.5vh;
+    bottom: 21.5vh;
   }
 
   main .code {
@@ -1069,23 +1073,6 @@ footer .made-by br {
 
 @media (max-width: 360px) {
 
-  header h1 {
-    margin-left: 28px;
-  }
-
-  header h2 {
-    font-size: 17px;
-  }
-
-  header .line {
-    height: 205px;
-  }
-
-  header a.scroll {
-    bottom: 60px;
-    font-size: 14px;
-  }
-
   main .code {
     font-size: 11.5px;
   }
@@ -1148,28 +1135,6 @@ footer .made-by br {
 }
 
 @media (max-width: 345px) {
-
-  header h1 {
-    margin: 0 25px 30px 25px;
-  }
-
-  header h2 {
-    font-size: 16px;
-    margin-right: 25px;
-    margin-left: 25px;
-  }
-
-  header a.scroll:before {
-    top: 0;
-    left: 1px;
-    width: 21px;
-    height: 36px;
-  }
-
-  header a.scroll:after {
-    top: 7px;
-    height: 6px;
-  }
 
   main .code {
     font-size: 10.5px;
