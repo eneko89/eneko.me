@@ -724,6 +724,8 @@ footer .made-by br {
 
   header h2 {
     font-size: 22px;
+    color: #5c5c5c;
+    letter-spacing: 0.04vw;
   }
 
   footer > div {
@@ -930,7 +932,7 @@ footer .made-by br {
   }
 
   footer > div {
-    padding-left: 45px;
+    padding-left: 12vw;
   }
 
   .line {
