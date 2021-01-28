@@ -28,7 +28,7 @@ a:focus {
 
 body {
   margin: 0;
-  background-color: #ededed;
+  background-color: #f0f0f0;
   overscroll-behavior: none;
 }
 
@@ -179,24 +179,24 @@ header h2 {
   left: 40px;
   top: 0;
   position: absolute;
-  background: #b4b4b4;
+  background: #b5b5b5;
   background: linear-gradient(
     0deg,
-    #b4b4b4 35%,
-    rgba(180,180,180,0) 98%
+    #b5b5b5 35%,
+    rgba(181,181,181,0) 98%
   );
 }
 
 main .line,
 footer .line {
-  background: #b4b4b4;
+  background: #b5b5b5;
 }
 
 header a.scroll {
   position: absolute;
   display: inline-block;
   font-size: 16px;
-  color: #a4a4a4;
+  color: #a5a5a5;
   text-decoration: none;
   padding-left: 33px;
   left: 29px;
@@ -229,10 +229,10 @@ header a.scroll:before {
   left: 0;
   width: 24px;
   height: 40px;
-  border: 2px solid #b4b4b4;
+  border: 2px solid #b5b5b5;
   border-radius: 12px;
   content: '';
-  background-color: #ededed;
+  background-color: #f0f0f0;
   transition: border-color 300ms;
 }
 
@@ -248,7 +248,7 @@ header a.scroll:after {
   left: 11px;
   width: 2px;
   height: 8px;
-  background: #b4b4b4;
+  background: #b5b5b5;
   border-radius: 1px;
   content: '';
   animation-name: scroll;
@@ -294,7 +294,7 @@ main .code .code-line:before {
 }
 
 main .code .code-line:hover:after {
-  background-color: #e6e6e6;
+  background-color: #e8e8e8;
   top: 0;
   width: 300%;
   left: -100%;
@@ -366,7 +366,7 @@ button {
 }
 
 button:hover {
-  color: #ededed;
+  color: #f0f0f0;
 }
 
 button:after {
@@ -496,7 +496,7 @@ footer .contact-modal {
   width: 100%;
   visibility: hidden;
   z-index: 10;
-  background: #ededed;
+  background: #f0f0f0;
   transform: translateY(-50px);
   opacity: 0;
   transition: opacity .15s linear, transform .3s ease-out, visibility .3s;
@@ -551,7 +551,7 @@ footer .contact-modal input:-webkit-autofill,
 footer .contact-modal input:-webkit-autofill:hover,
 footer .contact-modal input:-webkit-autofill:focus {
   -webkit-text-fill-color: #3c3c3c;
-  -webkit-box-shadow: 0 0 0px 1000px #ededed inset;
+  -webkit-box-shadow: 0 0 0px 1000px #f0f0f0 inset;
 }
 
 footer .contact-modal input.email-input {
@@ -671,7 +671,7 @@ footer .contact-modal .submission .notifications svg.dismiss {
 
 footer .made-by {
   font-family: 'Roboto', sans-serif;
-  color: #878787;
+  color: #888888;
   font-size: 12px;
   padding-bottom: 15px;
   letter-spacing: 0.2px;
@@ -687,11 +687,11 @@ footer .made-by .heart {
 }
 
 footer .made-by a {
-  color: #878787;
+  color: #888888;
 }
 
 footer .made-by a:visited {
-  color: #878787;
+  color: #888888;
 }
 
 footer .made-by a:hover {
