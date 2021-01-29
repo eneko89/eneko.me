@@ -145,7 +145,7 @@ header h2 {
   line-height: 1.5;
   font-size: 24px;
   text-align: justify;
-  color: #3c3c3c;
+  color: #3e3e3e;
   margin-bottom: 35vh;
   margin-right: 59px;
   margin-left: 62px;
@@ -179,17 +179,17 @@ header h2 {
   left: 40px;
   top: 0;
   position: absolute;
-  background: #b6b6b6;
+  background: #b7b7b7;
   background: linear-gradient(
     0deg,
-    #b6b6b6 35%,
-    rgba(182,182,182,0) 98%
+    #b7b7b7 35%,
+    rgba(183,183,183,0) 98%
   );
 }
 
 main .line,
 footer .line {
-  background: #b6b6b6;
+  background: #b7b7b7;
 }
 
 header a.scroll {
@@ -229,7 +229,7 @@ header a.scroll:before {
   left: 0;
   width: 24px;
   height: 40px;
-  border: 2px solid #b6b6b6;
+  border: 2px solid #b7b7b7;
   border-radius: 12px;
   content: '';
   background-color: #f0f0f0;
@@ -248,7 +248,7 @@ header a.scroll:after {
   left: 11px;
   width: 2px;
   height: 8px;
-  background: #b6b6b6;
+  background: #b7b7b7;
   border-radius: 1px;
   content: '';
   animation-name: scroll;
@@ -671,7 +671,7 @@ footer .contact-modal .submission .notifications svg.dismiss {
 
 footer .made-by {
   font-family: 'Roboto', sans-serif;
-  color: #888888;
+  color: #9c9c9c;
   font-size: 12px;
   padding-bottom: 15px;
   letter-spacing: 0.2px;
@@ -687,11 +687,11 @@ footer .made-by .heart {
 }
 
 footer .made-by a {
-  color: #888888;
+  color: #9c9c9c;
 }
 
 footer .made-by a:visited {
-  color: #888888;
+  color: #9c9c9c;
 }
 
 footer .made-by a:hover {
@@ -910,7 +910,7 @@ footer .made-by br {
 @media (max-width: 560px) {
 
   header {
-    background-position: 42% 58%;
+    background-position: 41% 57%;
     background-size: initial;
   }
 
@@ -919,7 +919,7 @@ footer .made-by br {
   }
 
   header h1 {
-    margin: 8vw 8vw 6vw 8vw;
+    margin: 8vw 8vw 3vw 8vw;
     font-size: 8.6vw;
     line-height: 1.4;
   }
@@ -942,12 +942,17 @@ footer .made-by br {
   header .line {
     top: initial;
     bottom: 0;
-    height: 44.5vh;
+    height: 44vh;
+    background: linear-gradient(
+      0deg
+      ,#b7b7b7 55%,
+      rgba(183,183,183,0) 100%
+    );
   }
 
   header a.scroll {
     left: calc(8.3vw - 12px);
-    bottom: 21.5vh;
+    bottom: 21vh;
   }
 
   main .code {
