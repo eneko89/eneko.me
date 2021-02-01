@@ -209,6 +209,8 @@ header a.scroll {
   bottom: 15.5vh;
   font-family: 'Roboto', sans-serif;
   transition: color 300ms;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .line,
@@ -378,7 +380,9 @@ button {
   font-weight: 500;
   overflow: hidden;
   transition: color 300ms;
-  border-style:none;
+  border-style: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:hover {
@@ -526,6 +530,8 @@ footer .contact-modal > svg.close-modal {
   fill: #3c3c3c;
   cursor: pointer;
   z-index: 11;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 footer .contact-modal > div {
@@ -684,6 +690,8 @@ footer .contact-modal .submission .notifications svg.dismiss {
   right: 20px;
   fill: #fff;
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 footer .made-by {
@@ -890,6 +898,7 @@ footer .made-by br {
 
   footer .contact-modal .submission .notifications {
     flex: 1;
+    transition: none;
     position: absolute;
     padding-left: 27px;
     padding-right: 125px;
