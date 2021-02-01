@@ -731,10 +731,6 @@ footer .made-by br {
     width: 100%;
   }
 
-}
-
-@media (max-width: 800px), (max-height: 500px) {
-
   header h1 {
     font-size: 50px;
   }
@@ -780,7 +776,7 @@ footer .made-by br {
 
 }
 
-@media (max-width: 750px), (max-height: 500px) {
+@media (max-width: 750px) {
 
   header h1 {
     font-size: 46px;
@@ -813,7 +809,7 @@ footer .made-by br {
 
 }
 
-@media (max-width: 700px), (max-height: 500px) {
+@media (max-width: 700px) {
 
   header h1 {
     font-size: 40px;
@@ -823,18 +819,41 @@ footer .made-by br {
     font-size: 17px;
   }
 
+  main .code.wide-format {
+    display: none;
+  }
+
+  main .code.narrow-format {
+    display: block;
+  }
+
   footer .social-links a {
-    width: 45%;
+    margin: 12px 0;
+  }
+
+  footer .social-links a.linkedin,
+  footer .social-links a.twitter {
+    width: 230px;
+  }
+
+  footer .social-links a.github,
+  footer .social-links a.email {
+    width: 210px;
   }
 
   footer .social-links .get-in-touch {
     top: 0;
-    margin-top: 30px;
+    margin-top: 25px;
   }
 
   footer h1 {
     font-size: 28px;
+    margin-bottom: 15px;
   }
+
+}
+
+@media (max-width: 700px), (max-height: 500px) {
 
   footer .contact-modal {
     font-size: 20px;
@@ -882,32 +901,6 @@ footer .made-by br {
 
   footer .contact-modal .submission .notifications.show {
     position: static;
-  }
-
-}
-
-@media (max-width: 700px) {
-
-  main .code.wide-format {
-    display: none;
-  }
-
-  main .code.narrow-format {
-    display: block;
-  }
-
-}
-
-@media (min-width: 700px) and (max-height: 500px) {
-
-  footer .social-links a {
-    width: 33.5%;
-  }
-
-  footer .social-links .get-in-touch {
-    width: 205px;
-    top: -28px;
-    margin-top: 0;
   }
 
 }
@@ -967,6 +960,10 @@ footer .made-by br {
 
   main .code .code-line:before {
     left: -8.4vw;
+  }
+
+  footer .social-links {
+    margin-bottom: 90px;
   }
 
   footer .contact-modal {
