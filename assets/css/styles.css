@@ -856,7 +856,7 @@ footer .made-by br {
   }
 
   footer .contact-modal textarea {
-    line-height: 1.6;
+    line-height: 1.4;
   }
 
   footer .contact-modal .submission {
@@ -1008,8 +1008,8 @@ footer .made-by br {
   }
 
   footer .contact-modal .submission .notifications svg.dismiss {
-    top: 7.5vw;
-    right: 7.5vw;
+    top: 7.65vw;
+    right: 7.65vw;
     width: 5.8vw;
   }
 
@@ -1095,24 +1095,24 @@ footer .made-by br {
   }
 
   footer .contact-modal > svg.close-modal {
-    width: 3.4vw;
-    right: 1.5vw;
-    top: 2vw;
+    width: 7.35vh;
+    right: 3.24vh;
+    top: 4.3vh;
   }
 
   footer .contact-modal h1 {
-    font-size: 4.3vw;
-    height: 7.5vw;
-    margin: 1.5vw 0 0 1.5vw;
+    font-size: 9.3vh;
+    height: 16.2vh;
+    margin: 3.24vh 0 0 3.24vh;
   }
 
   footer .contact-modal form {
-    padding: 0 1.5vw;
+    padding: 0 3.24vh;
   }
 
   footer .contact-modal textarea {
-    margin: 1.5vw 0 1.5vw;
-    line-height: 2.7vw;
+    margin: 3.24vh 0 3.24vh;
+    line-height: 1.2;
   }
 
   footer .contact-modal input.name-input {
@@ -1124,29 +1124,29 @@ footer .made-by br {
   }
 
   footer .contact-modal .submission {
-    margin-bottom: 1.5vw;
+    margin-bottom: 3.24vh;
   }
 
   footer .contact-modal .submission .notifications {
-    padding: 2.5vw;
-    margin-bottom: 1.5vw;
-    font-size: 2.1vw;
+    padding: 5vh;
+    margin-bottom: 3.24vh;
+    font-size: 4.4vh;
   }
 
   footer .contact-modal .submission .notifications svg.dismiss {
-    width: 2.7vw;
-    top: 2.4vw;
-    right: 2.5vw;
+    width: 5.7vh;
+    top: 4.9vh;
+    right: 5.4vh;
   }
 
   footer .contact-modal .submission button {
-    padding: 2.2vw;
-    font-size: 2vw;
+    padding: 4.75vh;
+    font-size: 4.3vh;
   }
 
 }
 
-@media (max-width: 360px), (max-height: 500px) and (min-width: 550px) {
+@media (max-height: 500px) and (min-width: 550px), (max-width: 360px) {
 
   header a.scroll {
     font-size: 14px;
@@ -1161,6 +1161,26 @@ footer .made-by br {
 
   header a.scroll:after {
     animation-name: scroll-short;
+  }
+
+}
+
+@media (max-height: 200px) and (min-width: 550px) {
+
+  footer .contact-modal h1 {
+    display: none;
+  }
+
+  footer .contact-modal > svg.close-modal {
+    display: none;
+  }
+
+  footer .contact-modal .submission .notifications {
+    display: none;
+  }
+
+  footer .contact-modal .submission button {
+    display: none;
   }
 
 }
