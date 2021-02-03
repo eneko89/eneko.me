@@ -27,7 +27,6 @@ scrollToAnchor.addEventListener('click', () => {
     behavior: 'smooth',
     block: 'start'
   });
-  scrollToAnchor.blur();
   event.preventDefault();
 });
 

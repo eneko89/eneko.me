@@ -201,8 +201,11 @@ footer .line {
 header a.scroll {
   position: absolute;
   display: inline-block;
-  font-size: 16px;
-  color: #a5a5a5;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: .2px;
+  line-height: 1.35;
+  color: #b7b7b7;
   text-decoration: none;
   padding-left: 33px;
   left: 29px;
@@ -233,7 +236,7 @@ header a.scroll:focus {
 header a.scroll:before {
   display: block;
   position: absolute;
-  top: -2px;
+  top: 0;
   left: 0;
   width: 24px;
   height: 40px;
@@ -794,11 +797,6 @@ footer .made-by br {
 
   header h2 {
     font-size: 20px;
-  }
-
-  header a.scroll {
-    font-size: 15px;
-    line-height: 18px;
   }
 
   main .code {
