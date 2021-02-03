@@ -706,9 +706,11 @@ footer .made-by .copy {
   font-size: 13px;
 }
 
-footer .made-by .heart {
-  font-size: 11px;
-  color: #ce7c7c;
+footer .made-by svg {
+  height: 11px;
+  position: relative;
+  top: 1px;
+  fill: #d08080;
 }
 
 footer .made-by a {
@@ -1062,10 +1064,11 @@ footer .made-by br {
 
   footer .made-by {
     font-size: 11px;
+    padding-bottom: 10px;
   }
 
-  footer .made-by .heart {
-    font-size: 10px;
+  footer .made-by svg {
+    height: 10px;
   }
 
 }
