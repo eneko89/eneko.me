@@ -3,6 +3,7 @@
   "private": "true",
   "description": "My personal web page.",
   "author": "Eneko <contact@eneko.me>",
+  "repository": "eneko89/eneko.me",
   "version": "0.1.0",
   "main": "server.js",
   "scripts": {
@@ -37,7 +38,6 @@
     "onchange": "~7.1.0"
   },
   "engines": {
-    "node": "15.6.0",
-    "npm": "7.4.0"
+    "node": ">=12.0.0"
   }
 }
