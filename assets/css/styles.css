@@ -570,6 +570,11 @@ footer .contact-modal input {
   border-bottom: 2px solid #3c3c3c;
 }
 
+footer .contact-modal input::placeholder,
+footer .contact-modal textarea::placeholder {
+  opacity: 0.55;
+}
+
 footer .contact-modal input:-webkit-autofill,
 footer .contact-modal input:-webkit-autofill:hover,
 footer .contact-modal input:-webkit-autofill:focus {
