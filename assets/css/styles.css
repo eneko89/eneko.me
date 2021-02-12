@@ -155,7 +155,7 @@ header h2 {
   margin: 15px 59px 35vh 62px;
   position: relative;
   overflow: hidden;
-  animation: fade-in .4s, slide-left .3s;
+  animation: fade-in .3s, slide-left .3s;
   animation-fill-mode: both;
   animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
   animation-delay: 1.6s;
