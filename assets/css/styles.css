@@ -173,7 +173,7 @@ header h2 {
 }
 
 @keyframes slide-left {
-  0% { transform: translateX(10px); }
+  0% { transform: translateX(6px); }
   to { transform: translateX(0px); }
 }
 
