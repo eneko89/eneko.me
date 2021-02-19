@@ -4,11 +4,11 @@
  */
 
 // Express, nodemailer and global middleware.
-const express = require('express');
-const nodemailer = require('nodemailer');
-const morgan = require('morgan');
-const bodyParser = require('body-parser');
-const compression = require('compression');
+import express from 'express';
+import nodemailer from 'nodemailer';
+import morgan from 'morgan';
+import bodyParser from 'body-parser';
+import compression from 'compression';
 
 // Nodemailer's Gmail transporter with OAuth2 authentication to send mails
 // on behalf of <contact@eneko.me> (Google Apps account with custom domain).

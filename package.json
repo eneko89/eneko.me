@@ -6,6 +6,7 @@
   "repository": "eneko89/eneko.me",
   "version": "0.1.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "npm run build && node server.js",
     "dev": "npm run build && (npm run watch & npm run serve)",
