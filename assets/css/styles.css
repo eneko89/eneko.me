@@ -177,6 +177,26 @@ header h2 {
   to { transform: translateX(0px); }
 }
 
+header aside {
+  position: absolute;
+  top: 0;
+  left: -180px;
+  text-align: right;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.5px;
+  font-weight: 500;
+  color: #749aa2;
+}
+
+header aside ul {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  line-height: 1.9;
+  list-style-type: none;
+  color: #a5a5a5;
+  font-weight: 400;
+}
+
 .line {
   width: 2px;
   height: 100%;

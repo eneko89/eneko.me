@@ -2,8 +2,8 @@
  * Copyright © 2020 Eneko Sanz <contact@eneko.me>
  * File distributed under the MIT license.
  */
-import { GitHubInfo } from './infoClasses';
 import { ContactModal } from './ContactModal';
+import { GitHubInfo, NpmInfo } from './infoClasses';
 
 // Main elements
 const mainElement = document.getElementsByTagName('main')[0];
@@ -39,5 +39,8 @@ getInTouchButton.addEventListener('click', () => {
   contactModal.open();
 });
 
-let ghRepos = new GitHubInfo(document.getElementsByTagName('aside')[0], 'eneko89', 5);
+const asideElement = document.getElementsByTagName('aside')[0];
+const ghRepos = new GitHubInfo(asideElement, 'eneko89', 5);
+const npmPkgs = new NpmInfo(asideElement, 'eneko89', 5);
 ghRepos.fetch().then(() => ghRepos.insert());
+npmPkgs.fetch().then(() => npmPkgs.insert());

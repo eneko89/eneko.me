@@ -10,7 +10,6 @@ class Info {
   async fetch() {
     const res = await fetch(this.url);
     this.list = this.transform(await res.json());
-    console.log(this.list);
   }
 
   insert() {
@@ -30,7 +29,7 @@ export class GitHubInfo extends Info {
     super(container);
     const userReposUrl = `https://api.github.com/users/${userName}/repos`;
     this.url = `${userReposUrl}?per_page=${repoNumber}&page=1&sort=updated`;
-    this.title = 'LAST GITHUB REPOS';
+    this.title = 'GITHUB REPOS';
   }
 
   transform(data) {
@@ -43,7 +42,7 @@ export class NpmInfo extends Info {
     super(container);
     const searchUlr = 'https://registry.npmjs.org/-/v1/search';
     this.url = `${searchUlr}?text=author:${userName}&size=${pkgNumber}`;
-    this.title = 'LAST NPM PACKAGES';
+    this.title = 'NPM PACKAGES';
   }
 
   transform(data) {
