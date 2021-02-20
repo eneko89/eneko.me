@@ -23,6 +23,7 @@ backgroundImg.onload = () => {
 };
 backgroundImg.src = 'img/bg.jpg';
 
+// Scrolls to #main  when .scroll is clicked.
 scrollToAnchor.addEventListener('click', () => {
   mainElement.scrollIntoView({
     behavior: 'smooth',
@@ -31,8 +32,8 @@ scrollToAnchor.addEventListener('click', () => {
   event.preventDefault();
 });
 
+// Creates and opens the contact modal when .get-in-touch is clicked.
 let contactModal;
-
 getInTouchButton.addEventListener('click', () => {
   contactModal = contactModal || new ContactModal();
   contactModal.open();
