@@ -4,23 +4,24 @@
  */
 export class ContactModal {
   constructor() {
+    const query = document.querySelectorAll;
     this.container = document.getElementsByClassName('contact-modal')[0];
-    this.closeIcon = document.querySelectorAll('.contact-modal > svg.close-modal')[0];
-    this.notifications = document.querySelectorAll('.contact-modal .notifications')[0];
-    this.dismissIcon = document.querySelectorAll('.contact-modal .notifications svg.dismiss')[0];
-    this.emailError = document.querySelectorAll('.contact-modal .notifications .email-error')[0];
-    this.emptyError = document.querySelectorAll('.contact-modal .notifications .empty-error')[0];
-    this.unknownError = document.querySelectorAll('.contact-modal .notifications .unknown-error')[0];
-    this.alreadySentError = document.querySelectorAll('.contact-modal .notifications .already-sent-error')[0];
-    this.clickToStartOver = document.querySelectorAll('.contact-modal .notifications .already-sent-error > a')[0];
-    this.successNotification = document.querySelectorAll('.contact-modal .notifications .success-notification')[0];
-    this.nameInput = document.querySelectorAll('.contact-modal input.name-input')[0];
-    this.emailInput = document.querySelectorAll('.contact-modal input.email-input')[0];
-    this.textInput = document.querySelectorAll('.contact-modal textarea')[0];
+    this.closeIcon = query('.contact-modal > svg.close-modal')[0];
+    this.notifications = query('.contact-modal .notifications')[0];
+    this.dismissIcon = query('.contact-modal .notifications svg.dismiss')[0];
+    this.emailError = query('.contact-modal .notifications .email-error')[0];
+    this.emptyError = query('.contact-modal .notifications .empty-error')[0];
+    this.unknownError = query('.contact-modal .notifications .unknown-error')[0];
+    this.alreadySentError = query('.contact-modal .notifications .already-sent-error')[0];
+    this.clickToStartOver = query('.contact-modal .notifications .already-sent-error > a')[0];
+    this.successNotification = query('.contact-modal .notifications .success-notification')[0];
+    this.nameInput = query('.contact-modal input.name-input')[0];
+    this.emailInput = query('.contact-modal input.email-input')[0];
+    this.textInput = query('.contact-modal textarea')[0];
     this.inputs = [this.nameInput, this.emailInput, this.textInput];
-    this.submitButton = document.querySelectorAll('.contact-modal .submission button')[0];
-    this.submitButtonSpinner = document.querySelectorAll('.contact-modal .submission button svg')[0];
-    this.submitButtonText = document.querySelectorAll('.contact-modal .submission button span')[0];
+    this.submitButton = query('.contact-modal .submission button')[0];
+    this.submitButtonSpinner = query('.contact-modal .submission button svg')[0];
+    this.submitButtonText = query('.contact-modal .submission button span')[0];
     this.setListeners();
   }
 
