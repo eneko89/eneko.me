@@ -4,24 +4,24 @@
  */
 export class ContactModal {
   constructor() {
-    const query = document.querySelectorAll;
+    const query = s => document.querySelectorAll(s);
     this.container = document.getElementsByClassName('contact-modal')[0];
     this.closeIcon = query('.contact-modal > svg.close-modal')[0];
     this.notifications = query('.contact-modal .notifications')[0];
-    this.dismissIcon = query('.contact-modal .notifications svg.dismiss')[0];
-    this.emailError = query('.contact-modal .notifications .email-error')[0];
-    this.emptyError = query('.contact-modal .notifications .empty-error')[0];
-    this.unknownError = query('.contact-modal .notifications .unknown-error')[0];
-    this.alreadySentError = query('.contact-modal .notifications .already-sent-error')[0];
-    this.clickToStartOver = query('.contact-modal .notifications .already-sent-error > a')[0];
-    this.successNotification = query('.contact-modal .notifications .success-notification')[0];
+    this.dismissIcon = query('.notifications svg.dismiss')[0];
+    this.emailError = query('.notifications .email-error')[0];
+    this.emptyError = query('.notifications .empty-error')[0];
+    this.unknownError = query('.notifications .unknown-error')[0];
+    this.alreadySentError = query('.notifications .already-sent-error')[0];
+    this.clickToStartOver = query('.notifications .already-sent-error > a')[0];
+    this.successNotification = query('.notifications .success-notification')[0];
     this.nameInput = query('.contact-modal input.name-input')[0];
     this.emailInput = query('.contact-modal input.email-input')[0];
     this.textInput = query('.contact-modal textarea')[0];
     this.inputs = [this.nameInput, this.emailInput, this.textInput];
-    this.submitButton = query('.contact-modal .submission button')[0];
-    this.submitButtonSpinner = query('.contact-modal .submission button svg')[0];
-    this.submitButtonText = query('.contact-modal .submission button span')[0];
+    this.submitButton = query('.submission button')[0];
+    this.submitButtonSpinner = query('.submission button svg')[0];
+    this.submitButtonText = query('.submission button span')[0];
     this.setListeners();
   }
 
