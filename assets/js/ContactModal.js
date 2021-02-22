@@ -2,7 +2,16 @@
  * Copyright © 2020 Eneko Sanz <contact@eneko.me>
  * File distributed under the MIT license.
  */
+
+/**
+ * Opens/closes contact modal, validates data and POSTs to '/contact.
+ *
+ * @final
+ */
 export class ContactModal {
+  /**
+   * Selects required elements.
+   */
   constructor() {
     const query = s => document.querySelectorAll(s);
     this.container = document.getElementsByClassName('contact-modal')[0];
@@ -25,6 +34,9 @@ export class ContactModal {
     this.setListeners();
   }
 
+  /**
+   * Sets event listeners.
+   */
   setListeners() {
     this.dismissIcon.addEventListener('click', () => this.dismissNotifications());
     this.closeIcon.addEventListener('click', event => this.close(event));
@@ -33,11 +45,22 @@ export class ContactModal {
     window.addEventListener('keydown', event => this.close(event));
   }
 
+  /**
+   * Shows the modal window and blocks scroll on the page.
+   *
+   * @listens MouseEvent
+   */
   open() {
     this.container.classList.add('open');
     document.body.classList.add('no-scroll');
   }
 
+  /**
+   * Hides the modal. Filters events that aren't clicks or 'Esc' keypesses.
+   *
+   * @listens MouseEvent
+   * @listens KeyboardEvent
+   */
   close(event) {
     if (event.type === 'click' || (event.key === 'Escape' || event.key === 'Esc')) {
       this.container.classList.remove('open');
@@ -46,20 +69,46 @@ export class ContactModal {
     }
   }
 
+  /**
+   * Clears input fields and dismisses notifications, if any.
+   *
+   * @listens MouseEvent
+   */
   reset(event) {
     this.inputs.forEach(input => input.value = '');
     this.dismissNotifications();
     event.preventDefault();
   }
 
+  /**
+   * Returns true if the value in this.emailInput matches dir@domain.tld.
+   *
+   * @return {boolean}
+   */
   isEmailValid() {
     return /^.+@.+\..+$/.test(this.emailInput.value);
   }
 
-  isInputEmpty(input) {
-    return input.value.trim() === '';
-  }
+  /**
+   * @typedef NotificationType
+   * @type {string}
+   * 
+   * One of these strings:
+   *  - emptyError
+   *  - emailError
+   *  - alreadySentError
+   *  - successNotification
+   *  - unknownError
+   */
 
+  /**
+   * Shows .notification with the NotificationType passed as parameter and
+   * highlights the input elements in invalidInputs if any.
+   * 
+   * @param  {NotificationType} notification 
+   * @param  {HtmlElement[]}    [invalidInputs] Input or textarea elements
+   *                                            to highlight.
+   */
   showNotification(notification, invalidInputs) {
     if (invalidInputs) {
       invalidInputs.forEach(input => input.classList.add('invalid'));
@@ -80,11 +129,19 @@ export class ContactModal {
     this.notifications.classList.add('show');
   }
 
+  /**
+   * Hides all notifications.
+   *
+   * @listens MouseEvent
+   */
   dismissNotifications() {
     this.inputs.forEach(input => input.classList.remove('invalid'));
     this.notifications.classList.remove('show');
   }
 
+  /**
+   * Disables submitButton and shows a spinner inside.
+   */
   showButtonSpinner() {
     this.submitButton.disabled = true;
     this.submitButton.classList.add('submitting');
@@ -92,6 +149,9 @@ export class ContactModal {
     this.submitButtonText.classList.remove('show');
   }
 
+  /**
+   * Enables submitButton and hides the spinner inside.
+   */
   hideButtonSpinner() {
     this.submitButton.disabled = false;
     this.submitButton.classList.remove('submitting');
@@ -99,8 +159,15 @@ export class ContactModal {
     this.submitButtonText.classList.add('show');
   }
 
+  /**
+   * Returns true if inputs are not empty after trimming, emailInput contains
+   * a valid e-mail and the data has not been already submitted previously.
+   * If no, returns false and shows the corresponding error notification.
+   * 
+   * @return {boolean}
+   */
   isDataValid() {
-    const emptyInputs = this.inputs.filter(input => this.isInputEmpty(input));
+    const emptyInputs = this.inputs.filter(input => input.value.trim() === '');
 
     if (emptyInputs.length) {
       this.showNotification('emptyError', emptyInputs);
@@ -117,6 +184,12 @@ export class ContactModal {
     return true;
   }
 
+  /**
+   * Generates a hash with the data in the inputs after trimming. Based on the
+   * String.hashCode implementation in Java.
+   * 
+   * @return {number} A 32 bit integer.
+   */
   getDataHash() {
     const data = this.inputs.reduce((acc, cur) => acc + cur.value.trim(), '');
     console.log('data: ', data);
@@ -129,6 +202,17 @@ export class ContactModal {
     return hash;
   }
 
+  /**
+   * If data in inputs is valid, submits the form to /contact. If the server
+   * returns an error or something unexpected happens, it shows unknownError
+   * notification. If the request is successful, successNotification is shown
+   * and the hash of the data is stored, so that validation prevents from
+   * submitting the same again.
+   *
+   * @listens MouseEvent
+   * @param  {[type]} event [description]
+   * @return {[type]}       [description]
+   */
   submit(event) {
     event.preventDefault();
     this.dismissNotifications();
