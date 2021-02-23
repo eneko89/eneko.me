@@ -210,8 +210,7 @@ export class ContactModal {
    * submitting the same again.
    *
    * @listens MouseEvent
-   * @param  {[type]} event [description]
-   * @return {[type]}       [description]
+   * @param  {MouseEvent} event
    */
   submit(event) {
     event.preventDefault();
