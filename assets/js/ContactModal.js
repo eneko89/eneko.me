@@ -90,8 +90,7 @@ export class ContactModal {
   }
 
   /**
-   * @typedef NotificationType
-   * @type {string}
+   * @typedef {string} NotificationType
    * 
    * One of these strings:
    *  - emptyError
@@ -105,9 +104,9 @@ export class ContactModal {
    * Shows .notification with the NotificationType passed as parameter and
    * highlights the input elements in invalidInputs if any.
    * 
-   * @param  {NotificationType} notification 
-   * @param  {HtmlElement[]}    [invalidInputs] Input or textarea elements
-   *                                            to highlight.
+   * @param {NotificationType} notification
+   * @param {HtmlElement[]}    [invalidInputs] Input or textarea elements
+   *                                           to highlight.
    */
   showNotification(notification, invalidInputs) {
     if (invalidInputs) {
@@ -210,7 +209,7 @@ export class ContactModal {
    * submitting the same again.
    *
    * @listens MouseEvent
-   * @param  {MouseEvent} event
+   * @param   {MouseEvent} event
    */
   submit(event) {
     event.preventDefault();
