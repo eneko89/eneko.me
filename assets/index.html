@@ -10,6 +10,18 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="css/styles.min.css">
     <script src="js/scripts.min.js" defer></script>
+    <noscript>
+      <style>
+        body.no-scroll {
+          overflow: visible;
+        }
+        body.no-animate *,
+        body.no-animate *:before,
+        body.no-animate *:after {
+          animation-play-state: running !important;
+        }
+      </style>
+    </noscript>
   </head>
   <body class="no-animate no-scroll">
     <header>
