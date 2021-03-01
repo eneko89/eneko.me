@@ -4,7 +4,7 @@
  */
 
 /**
- * Opens/closes contact modal, validates data and POSTs to '/contact.
+ * Opens/closes contact modal, validates data and POSTs to '/contact'.
  *
  * @final
  */
