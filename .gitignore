@@ -10,7 +10,3 @@ dist
 # Minified JS & CSS files
 *.min.js
 *.min.css
-
-# OS folder config files
-Desktop.ini
-.DS_Store
