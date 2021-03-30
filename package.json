@@ -31,7 +31,7 @@
     "make-dir-cli": "~2.0.0",
     "morgan": "~1.10.0",
     "nodemailer": "~6.5.0",
-    "rollup": "~2.43.1",
+    "rollup": "~2.44.0",
     "rollup-plugin-terser": "~7.0.2"
   },
   "devDependencies": {
