@@ -19,7 +19,7 @@ if(history && history.scrollRestoration) {
 var backgroundImg = new Image();
 backgroundImg.onload = () => {
   document.body.classList.remove('no-animate');
-  window.setTimeout(() => document.body.classList.remove('no-scroll'), 2000);
+  window.setTimeout(() => document.body.classList.remove('no-scroll'), 2400);
 };
 backgroundImg.src = 'img/bg.jpg';
 

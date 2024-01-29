@@ -115,7 +115,7 @@ header h1 > span {
 }
 
 header span.reveal-block {
-  animation: reveal .8s;
+  animation: reveal 1s;
   animation-timing-function: cubic-bezier(.65, .05, .36, 1);
   animation-delay: .4s;
   background: #2e828e;
@@ -134,15 +134,15 @@ header span.reveal-text {
   animation: fade-in 0s;
   will-change: opacity;
   animation-fill-mode: forwards;
-  animation-delay: .8s;
+  animation-delay: 0.9s;
 }
 
 header h1 > span:nth-child(2) > span.reveal-block {
-  animation-delay: .8s;
+  animation-delay: 1s;
 }
 
 header h1 > span:nth-child(2) > span.reveal-text {
-  animation-delay: 1.2s;
+  animation-delay: 1.5s;
 }
 
 header h2 {
@@ -155,10 +155,10 @@ header h2 {
   margin: 15px 59px 35vh 62px;
   position: relative;
   overflow: hidden;
-  animation: fade-in .3s, slide-left .3s;
+  animation: fade-in .4s, slide-left .4s;
   animation-fill-mode: both;
   animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
-  animation-delay: 1.6s;
+  animation-delay: 2s;
   will-change: transform;
 }
 
@@ -223,7 +223,7 @@ footer {
   will-change: opacity;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
-  animation-delay: 1.6s;
+  animation-delay: 2s;
 }
 
 header a.scroll:hover,
@@ -263,7 +263,7 @@ header a.scroll:after {
   animation-name: scroll;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-delay: 1.6s;
+  animation-delay: 2s;
   transition: background-color 300ms;
 }
 
